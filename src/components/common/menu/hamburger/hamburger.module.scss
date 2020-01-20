@@ -1,0 +1,13 @@
+@import '../../../../assets/scss/init.scss';
+
+.hamburger {
+  background-color: initial;
+  border: none;
+  color: $color_bg;
+  padding: $padding * 0.666;
+  outline: none;
+  cursor: pointer;
+  &__icon {
+    font-size: 24px;
+  }
+}
