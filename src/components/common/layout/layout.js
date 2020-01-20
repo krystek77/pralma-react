@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
@@ -20,19 +19,6 @@ function Layout({ children }) {
       </Helmet>
       {/** menu */}
       <Menu />
-      <div>
-        <ul>
-          <li>
-            <Link to='/'>Home </Link>
-          </li>
-          <li>
-            <Link to='/produkty'>Products</Link>
-          </li>
-          <li>
-            <Link to='/technologie'>Technologies</Link>
-          </li>
-        </ul>
-      </div>
       {/** hero */}
       {children}
       {/** footer */}
