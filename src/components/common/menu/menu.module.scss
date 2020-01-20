@@ -1,5 +1,6 @@
 @import '../../../assets/scss/init.scss';
 .menu {
+  position: relative;
   background-color: $color-primary;
   display: flex;
   margin: 0 auto;
