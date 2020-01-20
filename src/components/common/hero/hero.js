@@ -5,14 +5,16 @@ import bgDefault from '../../../assets/images/hero/bg_default.png';
 
 function Hero({ heroClass, img, alt, label, title, description, children }) {
   return (
-    <header className={`${styles.hero} ${styles[heroClass]}`}>
+    <header className={styles.hero}>
       <img className={styles.hero__background} src={img} alt={alt} />
-      <div className={styles.hero__banner}>
-        <p className={styles.hero__label}>{label}</p>
-        <h1 className={styles.hero__title}>{title}</h1>
-        <p className={styles.hero__description}>{description}</p>
+      <div className={`${styles.container} ${styles[heroClass]}`}>
+        <div className={styles.hero__banner}>
+          <p className={styles.hero__label}>{label}</p>
+          <h1 className={styles.hero__title}>{title}</h1>
+          <p className={styles.hero__description}>{description}</p>
+        </div>
+        {children}
       </div>
-      {children}
     </header>
   );
 }

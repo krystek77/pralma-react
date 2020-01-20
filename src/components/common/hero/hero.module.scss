@@ -1,24 +1,29 @@
-@import '../../../assets/scss/variables';
+@import '../../../assets/scss/init';
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
 .hero {
   position: relative;
   height: 700px;
 
-  &-default {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  &-default,
   &-home,
   &-products,
   &-technologies {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
   }
-
   &__background {
     position: absolute;
     top: 0;
@@ -30,9 +35,7 @@
     z-index: -1;
   }
   &__banner {
-    // max-width: 320px;
     padding: 30px;
-    max-width: 500px;
   }
   &__label {
     color: $color-bg;
@@ -44,7 +47,7 @@
       display: block;
       content: '';
       position: absolute;
-      width: 320px;
+      width: 320px - 60px;
       height: 5px;
       background-color: $color-primary;
       bottom: -15px;
