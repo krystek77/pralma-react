@@ -1,0 +1,12 @@
+@import '../../../assets/scss/init.scss';
+
+.logo {
+  display: block;
+  width: 200px;
+  padding: $padding;
+  box-sizing: border-box;
+  &__image {
+    display: block;
+    max-width: 100%;
+  }
+}
