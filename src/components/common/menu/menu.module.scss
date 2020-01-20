@@ -1,0 +1,10 @@
+@import '../../../assets/scss/init.scss';
+.menu {
+  background-color: $color-primary;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
