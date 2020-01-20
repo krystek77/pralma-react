@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import Menu from '../menu';
+
 function Layout({ children }) {
   return (
     <>
@@ -17,8 +19,8 @@ function Layout({ children }) {
         </title>
       </Helmet>
       {/** menu */}
+      <Menu />
       <div>
-        MENU
         <ul>
           <li>
             <Link to='/'>Home </Link>
