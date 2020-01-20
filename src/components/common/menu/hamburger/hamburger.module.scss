@@ -10,4 +10,7 @@
   &__icon {
     font-size: 24px;
   }
+  @media (min-width: $layout-breakpoint-sm) {
+    display: none;
+  }
 }
