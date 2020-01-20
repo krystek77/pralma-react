@@ -7,7 +7,7 @@ function TechnologiesPage() {
   return (
     <Layout>
       <Hero
-        heroClass='hero-technologies'
+        heroClass={['hero-technologies']}
         img={bgImage}
         alt='Okładka strony technologie'
         label='Technologie'

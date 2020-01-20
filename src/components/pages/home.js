@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <Layout>
       <Hero
-        heroClass='hero-home'
+        heroClass={['hero-home']}
         img={bgImage}
         alt='Okładka strony głównej'
         label='Pralma'

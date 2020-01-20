@@ -7,7 +7,7 @@ function ProductsPage() {
   return (
     <Layout>
       <Hero
-        heroClass='hero-products'
+        heroClass={['hero-products']}
         img={bgImage}
         alt='Okładka strony produkty'
         label='Produkty'
