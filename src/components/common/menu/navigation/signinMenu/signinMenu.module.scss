@@ -7,10 +7,12 @@
   padding-top: 3 * $padding;
   padding-bottom: 3 * $padding;
   background-color: white;
+  width: 100%;
 
   @media (min-width: $layout-breakpoint-sm) {
     padding: initial;
     background-color: initial;
+    width: initial;
   }
 
   &__item {
