@@ -28,6 +28,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
   height: 100%;
 
   @media (min-width: $layout-breakpoint-sm) {
