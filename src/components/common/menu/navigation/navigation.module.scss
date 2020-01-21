@@ -4,17 +4,15 @@
   background-color: rgb(240, 240, 240);
   position: absolute;
   top: 0;
-  transform: translateX(-80vw);
+  left: -80vw;
   width: 80vw;
   height: 100vh;
   z-index: 1;
   box-shadow: 0px 0px 2px 1px rgba($color_fg, 1);
-  transition: transform 1s ease-out;
-  
+  transition: left 1s ease-out;
 
   &-show {
-    transform: translateX(0);
-    
+    left: 0;
   }
   @media (min-width: $layout-breakpoint-sm) {
     position: static;
