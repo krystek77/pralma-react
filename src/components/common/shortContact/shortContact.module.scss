@@ -1,14 +1,17 @@
 @import '../../../assets/scss/init.scss';
-
+.short-contact {
+  display: none;
+  @media (min-width: $layout-breakpoint-lg) {
+    display: block;
+  }
+}
 .container {
   display: flex;
   margin: 0 auto;
   height: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-.short-contact {
-  padding: $padding * 3 0;
+  padding: $padding $padding;
 }
