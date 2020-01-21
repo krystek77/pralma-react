@@ -3,6 +3,8 @@ import { NavLink as Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './navigation.module.scss';
 
+import SigninMenu from './signinMenu';
+
 function Navigation({ isOpen }) {
   const navigationClass = isOpen
     ? `${styles.navigation} ${styles['navigation-show']}`
@@ -11,35 +13,38 @@ function Navigation({ isOpen }) {
   return (
     <div className={navigationClass}>
       {/** mainMenu */}
-      <ul className={styles['main-menu']}>
-        <li className={styles['main-menu__item']}>
-          <Link
-            to='/'
-            className={styles['main-menu__link']}
-            exact
-            activeClassName={styles.active}>
-            Home
-          </Link>
-        </li>
-        <li className={styles['main-menu__item']}>
-          <Link
-            to='/produkty'
-            className={styles['main-menu__link']}
-            activeClassName={styles.active}>
-            Produkty
-          </Link>
-        </li>
-        <li className={styles['main-menu__item']}>
-          <Link
-            to='/technologie'
-            className={styles['main-menu__link']}
-            activeClassName={styles.active}>
-            Technologie
-          </Link>
-        </li>
-      </ul>
-      {/** signinMenu */}
-      {/** signoutMenu */}
+      <div className={styles.inner}>
+        <ul className={styles['main-menu']}>
+          <li className={styles['main-menu__item']}>
+            <Link
+              to='/'
+              className={styles['main-menu__link']}
+              exact
+              activeClassName={styles.active}>
+              Home
+            </Link>
+          </li>
+          <li className={styles['main-menu__item']}>
+            <Link
+              to='/produkty'
+              className={styles['main-menu__link']}
+              activeClassName={styles.active}>
+              Produkty
+            </Link>
+          </li>
+          <li className={styles['main-menu__item']}>
+            <Link
+              to='/technologie'
+              className={styles['main-menu__link']}
+              activeClassName={styles.active}>
+              Technologie
+            </Link>
+          </li>
+        </ul>
+        {/** signinMenu */}
+        <SigninMenu />
+        {/** signoutMenu */}
+      </div>
     </div>
   );
 }
