@@ -1,0 +1,68 @@
+@import '../../../../../assets/scss/init.scss';
+.signinMenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: 3 * $padding;
+  padding-bottom: 3 * $padding;
+  background-color: white;
+
+  @media (min-width: $layout-breakpoint-sm) {
+    padding: initial;
+    background-color: initial;
+  }
+
+  &__item {
+    margin-right: $margin;
+    @media (min-width: $layout-breakpoint-sm) {
+      margin: initial;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-secondary;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-bg;
+    border: 1px solid darken($color-secondary, 10%);
+    padding: $padding * 0.666;
+    border-radius: 4px;
+    &:hover {
+      color: $color-highlights;
+      transition: color 0.3s ease-out;
+    }
+    @media (min-width: $layout-breakpoint-sm) {
+      padding: $padding * 0.666;
+      border: unset;
+      background-color: unset;
+    }
+  }
+
+  &__icon {
+    font-size: 16px;
+    color: $color-bg;
+    @media (min-width: $layout-breakpoint-sm) {
+      color: $color_bg;
+      font-size: 18px;
+
+      &:hover {
+        color: darken($color: $color-fg, $amount: 20%);
+        transition: color 0.3s ease-out;
+      }
+    }
+  }
+
+  &__label {
+    margin-left: $margin * 0.5;
+    font-weight: 300;
+    text-transform: lowercase;
+    @media (min-width: $layout-breakpoint-sm) {
+      display: none;
+    }
+  }
+}
