@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AiFillCar, AiFillProject, AiFillTool } from 'react-icons/ai';
-import { MdSchool } from 'react-icons/md';
+import { MdSchool, MdLocalLaundryService } from 'react-icons/md';
 import { GiReceiveMoney } from 'react-icons/gi';
 import Title from '../../common/title';
 import styles from './service.module.scss';
@@ -16,31 +16,38 @@ const services = [
   },
   {
     id: 2,
+    title: 'Finansowanie',
+    info:
+      'Efficiently disintermediate revolutionary niche markets for e-business processes. Collaboratively scale B2B human capital before resource sucking manufactured products. Continually maximize global benefits after vertical vortals.',
+    icon: <GiReceiveMoney />,
+  },
+  {
+    id: 3,
     title: 'Dostawa',
     info:
       'Efficiently disintermediate revolutionary niche markets for e-business processes. Collaboratively scale B2B human capital before resource sucking manufactured products. Continually maximize global benefits after vertical vortals.',
     icon: <AiFillCar />,
   },
   {
-    id: 3,
+    id: 4,
     title: 'Montaż',
     info:
       'Efficiently disintermediate revolutionary niche markets for e-business processes. Collaboratively scale B2B human capital before resource sucking manufactured products. Continually maximize global benefits after vertical vortals.',
     icon: <AiFillTool />,
   },
   {
-    id: 4,
+    id: 5,
     title: 'Szkolenie',
     info:
       'Efficiently disintermediate revolutionary niche markets for e-business processes. Collaboratively scale B2B human capital before resource sucking manufactured products. Continually maximize global benefits after vertical vortals.',
     icon: <MdSchool />,
   },
   {
-    id: 5,
-    title: 'Finansowanie',
+    id: 6,
+    title: 'Wsparcie techniczne',
     info:
       'Efficiently disintermediate revolutionary niche markets for e-business processes. Collaboratively scale B2B human capital before resource sucking manufactured products. Continually maximize global benefits after vertical vortals.',
-    icon: <GiReceiveMoney />,
+    icon: <MdLocalLaundryService />,
   },
 ];
 
