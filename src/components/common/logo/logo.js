@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './logo.module.scss';
 import LogoImage from '../../../assets/images/logopralma.png';
 
-function Logo() {
+function Logo({ logoClass }) {
   return (
-    <Link to='/' className={styles.logo}>
+    <Link to='/' className={styles[logoClass]}>
       <img
         className={styles.logo__image}
         src={LogoImage}
@@ -15,4 +16,12 @@ function Logo() {
     </Link>
   );
 }
+
+Logo.propTypes = {
+  logoClass: PropTypes.arrayOf(PropTypes.string),
+};
+
+Logo.defaultProps = {
+  logoClass: ['logo'],
+};
 export default Logo;
