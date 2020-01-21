@@ -1,0 +1,12 @@
+@import '../../../assets/scss/init.scss';
+
+.title {
+  color: $color-fg;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  position: relative;
+  padding: $padding * 2 $padding;
+  margin: 0;
+}
