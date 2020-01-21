@@ -1,1 +1,49 @@
 @import '../../../assets/scss/init.scss';
+
+.container {
+  margin: 0 auto;
+  // display: grid;
+  @media (min-width: $layout-breakpoint-lg) {
+    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+/* card - service*/
+.service-card {
+  padding: $padding * 2 $padding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  svg {
+    font-size: 150px;
+  }
+  &-1 {
+    color: $color-primary;
+  }
+  &-2 {
+    color: $color-secondary;
+  }
+  &-3 {
+    color: $color-highlights;
+  }
+  &-4 {
+    color: $color-fg;
+  }
+  &-5 {
+    color: $color-bg;
+  }
+  &__title {
+    color: $color-fg;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 0 $margin 0;
+  }
+  &__info {
+    font-weight: 300;
+    line-height: 1.4;
+    font-size: 16px;
+    color: $color-fg;
+  }
+}
