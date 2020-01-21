@@ -1,0 +1,14 @@
+@import '../../../assets/scss/init.scss';
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.short-contact {
+  padding: $padding * 3 0;
+}
