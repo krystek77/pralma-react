@@ -1,0 +1,24 @@
+@import '../../../../../assets/scss/init.scss';
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: $color-fg;
+  &__description {
+    padding: $padding;
+  }
+  &__icon {
+      
+    svg {
+      font-size: 32px;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  &__label {
+    color: rgb(154, 154, 154);
+  }
+}
