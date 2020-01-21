@@ -10,9 +10,11 @@
   z-index: 1;
   box-shadow: 0px 0px 2px 1px rgba($color_fg, 1);
   transition: transform 1s ease-out;
+  
 
   &-show {
     transform: translateX(0);
+    
   }
   @media (min-width: $layout-breakpoint-sm) {
     position: static;
@@ -34,72 +36,5 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-}
-/* mainMenu*/
-.main-menu {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top: 3 * $padding;
-  padding-bottom: 3 * $padding;
-  // height: 100%;
-  @media (min-width: $layout-breakpoint-sm) {
-    flex-direction: row;
-    justify-content: flex-end;
-    padding:initial;
-  }
-  &__item {
-    width: 100%;
-    @media (min-width: $layout-breakpoint-sm) {
-      width: auto;
-    }
-  }
-  &__link {
-    text-align: center;
-    color: $color-fg;
-    cursor: pointer;
-    display: block;
-    padding: $padding;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: 400;
-
-    @media (min-width: $layout-breakpoint-sm) {
-      font-size: 14px;
-      font-weight: 400;
-      position: relative;
-      color: $color-bg;
-      &::after {
-        display: block;
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0px;
-        height: 100%;
-        border: 1px solid lighten($color: $color-primary, $amount: 10%);
-      }
-      &:hover {
-        color: darken($color: $color-fg, $amount: 20%);
-        transition: color 0.3s ease-out;
-      }
-    }
-
-    &:hover {
-      color: darken($color: $color-highlights, $amount: 0%);
-      transition: color 0.3s ease-out;
-    }
-  }
-}
-
-.active {
-  background-color: $color-secondary;
-  color: $color-bg;
-  @media (min-width: $layout-breakpoint-sm) {
-    background-color: $color-secondary;
   }
 }
