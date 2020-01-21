@@ -1,27 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import SEO from '../seo';
 import Menu from '../menu';
+import ShortContact from '../shortContact';
 
 function Layout({ children }) {
   return (
     <>
-      {/** SEO */}
-      <Helmet>
-        <meta charSet='utf-8' />
-        <meta name='description' content='' />
-        <meta name='keywords' content='' />
-        <meta name='author' content='Krystian Wrona' />
-        <title>
-          Przedsiębiorstwo Produkcji Urządzeń Pralniczych Pralma sp. z o.o.
-        </title>
-      </Helmet>
-      {/** menu */}
+      <SEO />
       <Menu />
-      {/** hero */}
+      <ShortContact />
       {children}
-      {/** footer */}
       <div>Footer</div>
     </>
   );
