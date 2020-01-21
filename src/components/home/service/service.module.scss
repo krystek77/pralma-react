@@ -2,9 +2,16 @@
 
 .container {
   margin: 0 auto;
-  // display: grid;
+
+  @media (min-width: $layout-breakpoint-sm) {
+    display: grid;
+    column-gap: $padding;
+    row-gap: $padding;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    place-items: start center;
+  }
   @media (min-width: $layout-breakpoint-lg) {
-    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
   }
 }
 /* card - service*/
@@ -48,5 +55,6 @@
     line-height: 1.4;
     font-size: 16px;
     color: $color-fg;
+    text-align: center;
   }
 }

@@ -9,4 +9,12 @@
   position: relative;
   padding: $padding * 2 $padding;
   margin: 0;
+  @media (min-width: $layout-breakpoint-sm) {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  @media (min-width: $layout-breakpoint-lg) {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
 }
