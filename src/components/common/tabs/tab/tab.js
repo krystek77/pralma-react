@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './tab.module.scss';
 
 function Tab({ children }) {
-  return <div className={styles.tab}>{children}</div>;
+  return <article className={styles.tab}>{children}</article>;
 }
 
 Tab.propTypes = {
