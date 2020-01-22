@@ -1,0 +1,50 @@
+/** 
+ * Variables
+ */
+
+// Colors
+$color-fg: #3e1a30;
+$color-bg: #fce3e7;
+$color-primary: #f01927;
+$color-secondary: #4f97c8;
+$color-highlights: #3a4364;
+//gaps
+$padding: 15px;
+$margin: 15px;
+//radius
+$border-radius: 4px;
+//line-height
+$line-height: 1.3;
+//font-size
+$font-button: 18px;
+//conatiner
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+//layouts
+$layout-breakpoint-sm: 576px;
+$layout-breakpoint-md: 768px;
+$layout-breakpoint-lg: 992px;
+$layout-breakpoint-xlg: 1200px;
+
+@media (min-width: $layout-breakpoint-sm) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: $layout-breakpoint-md) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: $layout-breakpoint-lg) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: $layout-breakpoint-xlg) {
+  .container {
+    max-width: 1140px;
+  }
+}

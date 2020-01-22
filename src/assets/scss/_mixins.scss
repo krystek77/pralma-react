@@ -1,0 +1,24 @@
+@mixin button() {
+  background-color: $color-primary;
+  border: 1px solid darken($color-primary, 10%);
+  border-radius: $border-radius;
+  color: $color-bg;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  padding: $padding * 0.666 $padding;
+}
+@mixin default-font() {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: $font-button;
+  line-height: $line-height;
+}
+@mixin button-hover() {
+  color: lighten($color: $color-bg, $amount: 10%);
+  box-shadow: -2px -2px 0px 0px $color-fg;
+}
+@mixin button-active() {
+  background-color: $color-secondary;
+  border: 1px solid darken($color-secondary, 10%);
+}
