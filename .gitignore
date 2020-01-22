@@ -25,4 +25,4 @@ yarn-error.log*
 # settings
 .vscode
 # assets
-src/assets
+src/assets/images
