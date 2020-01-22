@@ -1,0 +1,36 @@
+@import '../../../../assets/scss/init.scss';
+.article {
+  margin-top: $margin * 6;
+  &__content {
+    display: grid;
+    column-gap: $padding;
+  }
+  &__image {
+  }
+  @media (min-width: $layout-breakpoint-lg) {
+    &__title {
+      font-weight: 500;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: $color-fg;
+      margin: $margin * 3 0;
+    }
+    &__content {
+      grid-template-columns: minmax(320px, 400px) auto;
+    }
+    &__image {
+    }
+    &__text {
+      p {
+        font-size: 18px;
+        color: $color-fg;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+.image {
+  display: block;
+  max-width: 100%;
+}
