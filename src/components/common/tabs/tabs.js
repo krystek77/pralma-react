@@ -17,6 +17,8 @@ class Tabs extends React.Component {
 
   renderMenu() {
     const { children } = this.props;
+    const { activeTab } = this.state;
+
     return (
       <div className={styles.tabs__menu}>
         {React.Children.map(children, (tab, index) => {
@@ -25,9 +27,13 @@ class Tabs extends React.Component {
               <button
                 type='button'
                 key={tab.props.titleTab}
-                className={styles.tabs__button}
+                className={
+                  activeTab === index
+                    ? `${styles.tabs__button} ${styles['tabs__button-active']}`
+                    : styles.tabs__button
+                }
                 onClick={() => this.handleTab(index)}>
-                {tab.props.titleTab}
+                <h3 className={styles.tabs__title}>{tab.props.titleTab}</h3>
               </button>
             );
           }
