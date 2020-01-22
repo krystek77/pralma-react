@@ -4,6 +4,7 @@ import styles from './whyWe.module.scss';
 import Title from '../../common/title';
 import Tabs from '../../common/tabs';
 import Tab from '../../common/tabs/tab';
+import ContentTab from './content';
 
 function WhyWe() {
   return (
@@ -12,7 +13,7 @@ function WhyWe() {
         <Title title='Dlaczego Pralma' />
         <Tabs>
           <Tab titleTab='Niskie koszty'>
-            <div>--- tab content 0 ---</div>
+            <ContentTab />
           </Tab>
           <Tab titleTab='Wysoka wydajność'>
             <div>--- tab content 1 ---</div>
