@@ -1,1 +1,79 @@
 @import '../../../../assets/scss/init.scss';
+.grid {
+  display: grid;
+  @media (min-width: $layout-breakpoint-lg) {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    place-items: center;
+  }
+}
+//button link {
+.btn-link {
+  @include button();
+  box-shadow: 2px 2px 0px 0px $color-fg;
+  transition: all 0.3s ease-out;
+  &:hover {
+    @include button-hover();
+  }
+}
+//title
+.title {
+  font-size: $font-size * 1.5;
+  color: $color-fg;
+  &-second {
+    font-size: $font-size * 1.2;
+  }
+}
+//description
+.description {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: 300;
+  margin-bottom: $margin;
+}
+
+//list items
+.list-items {
+  margin-top: $margin;
+  margin-bottom: $margin;
+  &__item {
+    font-size: $font-size * 0.9;
+    font-weight: 300;
+    line-height: $line-height;
+    margin-top: $margin * 0.5;
+    margin-bottom: $margin * 0.5;
+    padding-left: $padding * 2;
+    position: relative;
+    &::after {
+      background-color: $color-secondary;
+      content: '';
+      display: block;
+      height: 12px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+    }
+  }
+}
+
+//profit
+.profit {
+  padding: $padding;
+  display: flex;
+  align-items: center;
+  width: auto;
+  &__value {
+    display: block;
+    font-weight: 500;
+    font-size: $font-size * 2;
+    color: $color-fg;
+  }
+  &__label {
+    font-size: $font-size * 1.5;
+    font-weight: 300;
+    color: $color-secondary;
+    margin-left: $margin;
+    text-transform: uppercase;
+  }
+}
