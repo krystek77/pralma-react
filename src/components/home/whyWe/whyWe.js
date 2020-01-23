@@ -5,6 +5,11 @@ import Title from '../../common/title';
 import Tabs from '../../common/tabs';
 import Tab from '../../common/tabs/tab';
 
+import Consumption from './consumption';
+import Performance from './performance';
+import Ergonomic from './ergonomic';
+import EcoFriendly from './ecofriendly';
+
 function WhyWe() {
   return (
     <section className={styles['why-we']}>
@@ -12,16 +17,16 @@ function WhyWe() {
         <Title title='Dlaczego Pralma' />
         <Tabs>
           <Tab titleTab='Niskie koszty'>
-            <div>--- tab content 1 ---</div>
+            <Consumption />
           </Tab>
           <Tab titleTab='Wysoka wydajność'>
-            <div>--- tab content 2 ---</div>
+            <Performance />
           </Tab>
           <Tab titleTab='Elegancja i ergonomia'>
-            <div>--- tab content 3 ---</div>
+            <Ergonomic />
           </Tab>
           <Tab titleTab='Przyjazne dla środowiska'>
-            <div>--- tab content 4 ---</div>
+            <EcoFriendly />
           </Tab>
         </Tabs>
       </div>
