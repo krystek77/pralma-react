@@ -23,7 +23,7 @@
   }
   &__link {
     text-align: center;
-    color: $color-fg;
+    color: $color-dark;
     cursor: pointer;
     display: block;
     padding: $padding;
@@ -35,7 +35,7 @@
       font-size: 14px;
       font-weight: 400;
       position: relative;
-      color: $color-bg;
+      color: $color-light;
       &::after {
         display: block;
         content: '';
@@ -47,13 +47,13 @@
         border: 1px solid lighten($color: $color-primary, $amount: 10%);
       }
       &:hover {
-        color: darken($color: $color-fg, $amount: 20%);
+        color: darken($color: $color-dark, $amount: 20%);
         transition: color 0.3s ease-out;
       }
     }
 
     &:hover {
-      color: darken($color: $color-highlights, $amount: 0%);
+      color: darken($color: $color-secondary-dark, $amount: 0%);
       transition: color 0.3s ease-out;
     }
   }
@@ -61,7 +61,7 @@
 
 .active {
   background-color: $color-secondary;
-  color: $color-bg;
+  color: $color-light;
   @media (min-width: $layout-breakpoint-sm) {
     background-color: $color-secondary;
   }

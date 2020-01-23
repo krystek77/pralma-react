@@ -4,12 +4,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: $color-fg;
+  color: $color-dark;
   &__description {
     padding: $padding;
   }
   &__icon {
-      
     svg {
       font-size: 32px;
     }

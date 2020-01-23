@@ -43,7 +43,7 @@
   &__title {
     margin-top: 0;
     margin-bottom: $margin;
-    color: darken($color: $color-fg, $amount: 20%);
+    color: darken($color: $color-dark, $amount: 20%);
     font-weight: 500;
     font-size: $font-size * 1.1;
     @media (min-width: $layout-breakpoint-sm) {
@@ -67,13 +67,13 @@
     color: $color-secondary;
   }
   &-3 {
-    color: $color-fg;
+    color: $color-dark;
   }
   &-4 {
     color: $color-primary;
   }
   &-5 {
-    color: $color-highlights;
+    color: $color-secondary-dark;
   }
   &-6 {
     color: $color-secondary;

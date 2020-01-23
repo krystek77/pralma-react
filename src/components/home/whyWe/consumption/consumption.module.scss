@@ -9,7 +9,7 @@
 //button link {
 .btn-link {
   @include button();
-  box-shadow: 2px 2px 0px 0px $color-fg;
+  box-shadow: 2px 2px 0px 0px $color-dark;
   transition: all 0.3s ease-out;
   &:hover {
     @include button-hover();
@@ -18,7 +18,7 @@
 //title
 .title {
   font-size: $font-size * 1.5;
-  color: $color-fg;
+  color: $color-dark;
   &-second {
     font-size: $font-size * 1.2;
   }
@@ -67,7 +67,7 @@
     display: block;
     font-weight: 500;
     font-size: $font-size * 2;
-    color: $color-fg;
+    color: $color-dark;
   }
   &__label {
     font-size: $font-size * 1.5;

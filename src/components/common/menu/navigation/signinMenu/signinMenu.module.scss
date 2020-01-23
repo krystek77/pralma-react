@@ -30,12 +30,12 @@
     background-color: $color-secondary;
     font-size: 14px;
     font-weight: 400;
-    color: $color-bg;
+    color: $color-light;
     border: 1px solid darken($color-secondary, 10%);
     padding: $padding * 0.666;
     border-radius: 4px;
     &:hover {
-      color: $color-highlights;
+      color: $color-secondary-dark;
       transition: color 0.3s ease-out;
     }
     @media (min-width: $layout-breakpoint-sm) {
@@ -47,13 +47,13 @@
 
   &__icon {
     font-size: 16px;
-    color: $color-bg;
+    color: $color-light;
     @media (min-width: $layout-breakpoint-sm) {
-      color: $color_bg;
+      color: $color-light;
       font-size: 18px;
 
       &:hover {
-        color: darken($color: $color-fg, $amount: 20%);
+        color: darken($color: $color-dark, $amount: 20%);
         transition: color 0.3s ease-out;
       }
     }

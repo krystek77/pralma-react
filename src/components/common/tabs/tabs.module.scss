@@ -6,7 +6,7 @@
     padding-bottom: $padding;
   }
   &__button {
-    box-shadow: 2px 2px 0px 0px $color-fg;
+    box-shadow: 2px 2px 0px 0px $color-dark;
     transition: all 0.3s ease-out;
     &:hover {
       @include button-hover();

@@ -5,7 +5,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  
+
   &-default {
     flex-direction: row;
   }
@@ -13,7 +13,7 @@
     flex-direction: column;
   }
   &__item {
-    color: $color_bg;
+    color: $color-light;
     padding: $padding * 0.666;
     cursor: pointer;
     margin: 0 $margin * 0.133;
