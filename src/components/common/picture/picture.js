@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './picture.module.scss';
-import defaultImage from '../../../assets/images/default_460_610.png';
+import defaultImage from '../../../assets/images/default_460_460.png';
 
 function Picture({ src, alt, width }) {
   return (
