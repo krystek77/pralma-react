@@ -53,9 +53,9 @@ const services = [
 
 function Service() {
   return (
-    <section className={styles.service}>
-      <div className={styles.container}>
-        <Title title='Nasze usługi' />
+    <section className={styles.services}>
+      <Title title='Nasze usługi' />
+      <div className={styles['services-inner']}>
         {services.map(service => {
           const cardClass = `service-card-${service.id}`;
           return (
