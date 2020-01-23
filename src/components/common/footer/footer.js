@@ -1,20 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './footer.module.scss';
+import Copyright from './copyright';
 
-function Footer({ children }) {
+function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>{children}</div>
+      <div className={styles.container}>
+        <Copyright />
+      </div>
     </footer>
   );
 }
-
-Footer.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-  ]).isRequired,
-};
 
 export default Footer;
