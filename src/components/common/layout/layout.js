@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import SEO from '../seo';
 import Menu from '../menu';
 import ShortContact from '../shortContact';
+import Footer from '../footer';
 
 function Layout({ children }) {
   return (
@@ -12,7 +13,7 @@ function Layout({ children }) {
       <Menu />
       <ShortContact />
       {children}
-      <div>Footer</div>
+      <Footer />
     </>
   );
 }
