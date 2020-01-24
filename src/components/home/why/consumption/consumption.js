@@ -24,10 +24,10 @@ function Consumption() {
           <Picture alt='Cascade drum' width={320} />
 
           <div className={styles['group-items']}>
-            <Profit value={25} label="Mniejsza wigotność resztkowa" />
+            <Profit value={25} label='Mniejsza wigotność resztkowa' />
             <Profit
               value={20}
-              label="Mniejsze zużycie energii w procesie suszenia"
+              label='Mniejsze zużycie energii w procesie suszenia'
             />
           </div>
 
@@ -53,7 +53,7 @@ function Consumption() {
           <ListItem text='Better washing performance, achieved by the specific shape of the bulges that provide an extra mechanical action' />
         </UnorderedList>
 
-        <Profit value={15} label="Mniejsze zużycie wody" />
+        <Profit value={15} label='Mniejsze zużycie wody' />
 
         <ButtonLink path='/produkty' label='Zobacz produkty' />
       </div>
