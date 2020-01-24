@@ -4,7 +4,7 @@ import styles from './button.module.scss';
 
 function Button({ type, label, children, active, disabled }) {
   let buttonClass = '';
-  let renderedButton = null;
+
   /**
    * if present active must be active
    * active -> active button
@@ -22,26 +22,21 @@ function Button({ type, label, children, active, disabled }) {
   }
   /**
    * Beacause value type attribute of button should not be dynamic
-   * They are diffrent buttons
+   * They are diffrent buttons. Eslint configuration forbids reset buttons because they are horribly bad fo UX
    */
 
-  switch (type) {
-    case 'submit':
-      renderedButton = (
-        <button type='submit' className={buttonClass}>
-          <span className={styles.btn__icon}>{children}</span>
-          <span className={styles.btn__label}>{label}</span>
-        </button>
-      );
-      break;
-    default:
-      renderedButton = (
-        <span type='button' className={buttonClass}>
-          <span className={styles.btn__icon}>{children}</span>
-          <span className={styles.btn__label}>{label}</span>
-        </span>
-      );
-  }
+  const renderedButton =
+    type === 'button' ? (
+      <button type='button' className={buttonClass}>
+        <span className={styles.btn__icon}>{children}</span>
+        <span className={styles.btn__label}>{label}</span>
+      </button>
+    ) : (
+      <button type='submit' className={buttonClass}>
+        <span className={styles.btn__icon}>{children}</span>
+        <span className={styles.btn__label}>{label}</span>
+      </button>
+    );
 
   return renderedButton;
 }
