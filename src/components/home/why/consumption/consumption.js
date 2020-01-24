@@ -1,6 +1,9 @@
 import React from 'react';
-import Picture from '../../../common/picture';
 import styles from './consumption.module.scss';
+
+import Picture from '../../../common/picture';
+import UnorderedList from '../../../common/unorderedList';
+import ListItem from '../../../common/unorderedList/listItem';
 
 function Consumption() {
   return (
@@ -45,23 +48,13 @@ function Consumption() {
           The CASCADE shape of the drum holes provides an extra mechanical
           action that produces an even better washing result
         </p>
-        <ul className={styles['list-items']}>
-          <li className={styles['list-items__item']}>
-            Simpler unloading, as your linen does not stick to the drum.
-          </li>
-          <li className={styles['list-items__item']}>
-            Maximum water extraction, thanks to more perforations in the drum
-            over the same surface
-          </li>
-          <li className={styles['list-items__item']}>
-            Less residual moisture, due to the inclination of the bulges that
-            extracts even more water.
-          </li>
-          <li className={styles['list-items__item']}>
-            Better washing performance, achieved by the specific shape of the
-            bulges that provide an extra mechanical action.
-          </li>
-        </ul>
+
+        <UnorderedList>
+          <ListItem text='Simpler unloading, as your linen does not stick to the drum' />
+          <ListItem text='Maximum water extraction, thanks to more perforations in the drum over the same surface' />
+          <ListItem text='Less residual moisture, due to the inclination of the bulges that extracts even more water.' />
+          <ListItem text='Better washing performance, achieved by the specific shape of the bulges that provide an extra mechanical action' />
+        </UnorderedList>
 
         <div className={styles.profit}>
           <span className={styles.profit__value}>15%</span>
