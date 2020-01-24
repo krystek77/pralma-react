@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './whyWe.module.scss';
+import styles from './why.module.scss';
 
 import Title from '../../common/title';
 import Tabs from '../../common/tabs';
@@ -10,9 +10,9 @@ import Performance from './performance';
 import Ergonomic from './ergonomic';
 import EcoFriendly from './ecofriendly';
 
-function WhyWe() {
+function Why() {
   return (
-    <section className={styles['why-we']}>
+    <section className={styles.why}>
       <div className={styles.container}>
         <Title title='Dlaczego Pralma' />
         <Tabs>
@@ -34,4 +34,4 @@ function WhyWe() {
   );
 }
 
-export default WhyWe;
+export default Why;
