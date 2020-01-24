@@ -1,0 +1,74 @@
+@import '../../../assets/scss/init.scss';
+
+.btn {
+  background-color: $color-primary;
+  border: 1px solid darken($color: $color-primary, $amount: 10%);
+  border-radius: $border-radius;
+  box-shadow: 2px 2px 0px 0px $color-dark;
+  color: $color-light;
+  font-size: $font-size * 0.8125; //13px
+  outline: none;
+  padding: $padding * 0.666 $padding;
+  margin-right: $margin * 0.666;
+  margin-bottom: $margin * 0.666;
+  cursor: pointer;
+  transform: all 0.3s ease-in;
+  line-height: 1;
+
+  &__icon {
+    margin-right: $margin * 0.333;
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @media (min-width: $layout-breakpoint-md) {
+      font-size: $font-size * 0.875; //14px
+    }
+    @media (min-width: $layout-breakpoint-lg) {
+      font-size: $font-size * 0.9375; //15px
+    }
+    @media (min-width: $layout-breakpoint-xlg) {
+      font-size: $font-size; //16px
+    }
+  }
+
+  &__label {
+    vertical-align: middle;
+    @media (min-width: $layout-breakpoint-md) {
+      font-size: $font-size * 0.875; //14px
+    }
+    @media (min-width: $layout-breakpoint-lg) {
+      font-size: $font-size * 0.9375; //15px
+    }
+    @media (min-width: $layout-breakpoint-xlg) {
+      font-size: $font-size; //16px
+    }
+  }
+
+  &:hover {
+    box-shadow: -2px -2px 0px 0px $color-dark;
+    background-color: darken($color: $color-primary, $amount: 10%);
+    color: lighten($color: $color-light, $amount: 10%);
+  }
+
+  &-active {
+    background-color: $color-secondary;
+    border: 1px solid darken($color-secondary, 10%);
+
+    &:hover {
+      box-shadow: 2px 2px 0px 0px $color-dark;
+      background-color: $color-secondary;
+      border: 1px solid darken($color-secondary, 10%);
+      color: lighten($color: $color-light, $amount: 10%);
+    }
+  }
+
+  &-disabled {
+    cursor: none;
+    pointer-events: none;
+    background-color: lighten($color: $black, $amount: 50%);
+    border-color: lighten($color: $black, $amount: 30%);
+    color: lighten($color: $black, $amount: 30%);
+  }
+}
