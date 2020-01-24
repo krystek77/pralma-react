@@ -4,6 +4,7 @@ import styles from './consumption.module.scss';
 import Picture from '../../../common/picture';
 import UnorderedList from '../../../common/unorderedList';
 import ListItem from '../../../common/unorderedList/listItem';
+import Profit from '../../../common/profit';
 import ButtonLink from '../../../common/buttonLink';
 
 function Consumption() {
@@ -21,20 +22,15 @@ function Consumption() {
         </p>
         <div className={styles.grid}>
           <Picture alt='Cascade drum' width={320} />
+
           <div className={styles['group-items']}>
-            <div className={styles.profit}>
-              <span className={styles.profit__value}>25%</span>
-              <strong className={styles.profit__label}>
-                Mniejsza wigotność resztkowa
-              </strong>
-            </div>
-            <div className={styles.profit}>
-              <span className={styles.profit__value}>20%</span>
-              <strong className={styles.profit__label}>
-                Mniejsze zużycie energii w procesie suszenia
-              </strong>
-            </div>
+            <Profit value={25} label="Mniejsza wigotność resztkowa" />
+            <Profit
+              value={20}
+              label="Mniejsze zużycie energii w procesie suszenia"
+            />
           </div>
+
           <Picture alt='Cascade drum' width={320} />
         </div>
 
@@ -57,13 +53,9 @@ function Consumption() {
           <ListItem text='Better washing performance, achieved by the specific shape of the bulges that provide an extra mechanical action' />
         </UnorderedList>
 
-        <div className={styles.profit}>
-          <span className={styles.profit__value}>15%</span>
-          <strong className={styles.profit__label}>
-            Mniejsze zużycie wody
-          </strong>
-        </div>
-        <ButtonLink path="/produkty" label="Zobacz produkty" />
+        <Profit value={15} label="Mniejsze zużycie wody" />
+
+        <ButtonLink path='/produkty' label='Zobacz produkty' />
       </div>
     </article>
   );
