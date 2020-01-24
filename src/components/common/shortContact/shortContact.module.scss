@@ -1,6 +1,7 @@
 @import '../../../assets/scss/init.scss';
 .short-contact {
   display: none;
+  width:100%;
   @media (min-width: $layout-breakpoint-lg) {
     display: block;
   }

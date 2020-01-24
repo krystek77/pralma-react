@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './layout.module.scss';
 
 import SEO from '../seo';
 import Menu from '../menu';
@@ -8,13 +9,13 @@ import Footer from '../footer';
 
 function Layout({ children }) {
   return (
-    <>
+    <div className={styles.layout}>
       <SEO />
       <Menu />
       <ShortContact />
-      {children}
+      <div className={styles.content}>{children}</div>
       <Footer />
-    </>
+    </div>
   );
 }
 
