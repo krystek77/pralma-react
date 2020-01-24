@@ -17,7 +17,8 @@
   &-default,
   &-home,
   &-products,
-  &-technologies {
+  &-technologies,
+  &-login {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
