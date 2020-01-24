@@ -1,7 +1,7 @@
 @import '../../../../assets/scss/init.scss';
 
 .navigation {
-  background-color: rgb(240, 240, 240);
+  background-color: lighten($color: $black, $amount: 60%);
   position: absolute;
   top: 0;
   left: -80vw;
