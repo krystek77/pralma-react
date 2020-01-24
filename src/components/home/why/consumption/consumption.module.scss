@@ -31,23 +31,3 @@
   margin-bottom: $margin;
 }
 
-//profit
-.profit {
-  padding: $padding;
-  display: flex;
-  align-items: center;
-  width: auto;
-  &__value {
-    display: block;
-    font-weight: 500;
-    font-size: $font-size * 2;
-    color: $color-dark;
-  }
-  &__label {
-    font-size: $font-size * 1.5;
-    font-weight: 300;
-    color: $color-secondary;
-    margin-left: $margin;
-    text-transform: uppercase;
-  }
-}
