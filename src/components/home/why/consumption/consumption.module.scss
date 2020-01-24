@@ -31,32 +31,6 @@
   margin-bottom: $margin;
 }
 
-//list items
-.list-items {
-  margin-top: $margin;
-  margin-bottom: $margin;
-  &__item {
-    font-size: $font-size * 0.9;
-    font-weight: 300;
-    line-height: $line-height;
-    margin-top: $margin * 0.5;
-    margin-bottom: $margin * 0.5;
-    padding-left: $padding * 2;
-    position: relative;
-    &::after {
-      background-color: $color-secondary;
-      content: '';
-      display: block;
-      height: 12px;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-    }
-  }
-}
-
 //profit
 .profit {
   padding: $padding;
