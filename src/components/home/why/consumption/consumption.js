@@ -4,6 +4,7 @@ import styles from './consumption.module.scss';
 import Picture from '../../../common/picture';
 import UnorderedList from '../../../common/unorderedList';
 import ListItem from '../../../common/unorderedList/listItem';
+import ButtonLink from '../../../common/buttonLink';
 
 function Consumption() {
   return (
@@ -62,10 +63,7 @@ function Consumption() {
             Mniejsze zużycie wody
           </strong>
         </div>
-
-        <a href='/' className={styles['btn-link']}>
-          Zobacz produkty
-        </a>
+        <ButtonLink path="/produkty" label="Zobacz produkty" />
       </div>
     </article>
   );
