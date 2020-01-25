@@ -2,7 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './button.module.scss';
 
-function Button({ type, label, children, active, disabled }) {
+function Button({
+  type,
+  label,
+  handleClickButton,
+  children,
+  active,
+  disabled,
+}) {
   let buttonClass = '';
 
   /**
@@ -27,12 +34,12 @@ function Button({ type, label, children, active, disabled }) {
 
   const renderedButton =
     type === 'button' ? (
-      <button type='button' className={buttonClass}>
+      <button type='button' className={buttonClass} onClick={handleClickButton}>
         <span className={styles.btn__icon}>{children}</span>
         <span className={styles.btn__label}>{label}</span>
       </button>
     ) : (
-      <button type='submit' className={buttonClass}>
+      <button type='submit' className={buttonClass} onClick={handleClickButton}>
         <span className={styles.btn__icon}>{children}</span>
         <span className={styles.btn__label}>{label}</span>
       </button>
@@ -44,6 +51,7 @@ function Button({ type, label, children, active, disabled }) {
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit']),
   label: PropTypes.string.isRequired,
+  handleClickButton: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.object]),
   active: PropTypes.bool,
   disabled: PropTypes.bool,
