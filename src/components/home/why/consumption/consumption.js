@@ -12,7 +12,7 @@ function Consumption() {
   return (
     <article className={styles.consumption}>
       <div className={styles.conatiner}>
-        <Title text="Optymalizacja kosztów" level="lvl-3" />
+        <Title text='Optymalizacja kosztów' level='lvl-3' />
 
         <p className={styles.description}>
           Water and energy use are a huge concerns for every stakeholder and
@@ -31,15 +31,13 @@ function Consumption() {
               label='Mniejsze zużycie energii w procesie suszenia'
             />
           </div>
-
-          <Picture alt='Cascade drum' width={320} />
         </div>
 
         <Title
-          text="PRIMUS introduces the unique CASCADE TM DRUM"
-          level="lvl-4"
+          text='PRIMUS introduces the unique CASCADE TM DRUM'
+          level='lvl-4'
         />
-
+        <Picture alt='Cascade drum' width={320} />
         <p className={styles.description}>
           The CASCADE DRUM concept results in more perforations in the drum over
           the same surface area – so water extraction is much more efficient
