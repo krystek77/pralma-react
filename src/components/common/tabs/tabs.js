@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tab from './tab';
+import Button from '../button';
 import styles from './tabs.module.scss';
 
 class Tabs extends React.Component {
@@ -24,17 +25,25 @@ class Tabs extends React.Component {
         {React.Children.map(children, (tab, index) => {
           if (tab.type === Tab) {
             return (
-              <button
-                type='button'
-                key={tab.props.titleTab}
-                className={
-                  activeTab === index
-                    ? `${styles.tabs__button} ${styles['tabs__button-active']}`
-                    : styles.tabs__button
-                }
-                onClick={() => this.handleTab(index)}>
-                <h3 className={styles.tabs__title}>{tab.props.titleTab}</h3>
-              </button>
+              <>
+                <Button
+                  key={tab.props.titleTab}
+                  label={tab.props.titleTab}
+                  active={activeTab === index}
+                  handleClickButton={() => this.handleTab(index)}
+                />
+                {/* <button
+                  type='button'
+                  key={tab.props.titleTab}
+                  className={
+                    activeTab === index
+                      ? `${styles.tabs__button} ${styles['tabs__button-active']}`
+                      : styles.tabs__button
+                  }
+                  onClick={() => this.handleTab(index)}>
+                  <h3 className={styles.tabs__title}>{tab.props.titleTab}</h3>
+                </button> */}
+              </>
             );
           }
           throw new Error('The element provided is not of correct type');

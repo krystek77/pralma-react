@@ -5,13 +5,6 @@
   &__menu {
     padding-bottom: $padding;
   }
-  &__button {
-    box-shadow: 2px 2px 0px 0px $color-dark;
-    transition: all 0.3s ease-out;
-    &:hover {
-      @include button-hover();
-    }
-  }
 
   @media (min-width: $layout-breakpoint-lg) {
     &__menu {
@@ -20,16 +13,5 @@
       flex-wrap: nowrap;
       justify-content: space-between;
     }
-    &__button {
-      @include button();
-    }
-    &__title {
-      margin-top: 0;
-      margin-bottom: 0;
-      @include default-font();
-    }
-  }
-  &__button-active {
-    @include button-active();
   }
 }
