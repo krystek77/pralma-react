@@ -15,14 +15,7 @@
     @include button-hover();
   }
 }
-//title
-.title {
-  font-size: $font-size * 1.5;
-  color: $color-dark;
-  &-second {
-    font-size: $font-size * 1.2;
-  }
-}
+
 //description
 .description {
   font-size: $font-size;

@@ -14,7 +14,7 @@ function Why() {
   return (
     <section className={styles.why}>
       <div className={styles.container}>
-        <Title title='Dlaczego Pralma' />
+        <Title text="Dlaczego Pralma" level="lvl-2" />
         <Tabs>
           <Tab titleTab='Niskie koszty'>
             <Consumption />

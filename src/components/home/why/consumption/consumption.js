@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './consumption.module.scss';
 
+import Title from '../../../common/title';
 import Picture from '../../../common/picture';
 import UnorderedList from '../../../common/unorderedList';
 import ListItem from '../../../common/unorderedList/listItem';
@@ -11,7 +12,7 @@ function Consumption() {
   return (
     <article className={styles.consumption}>
       <div className={styles.conatiner}>
-        <h3 className={styles.title}>Optymalizacja kosztów</h3>
+        <Title text="Optymalizacja kosztów" level="lvl-3" />
 
         <p className={styles.description}>
           Water and energy use are a huge concerns for every stakeholder and
@@ -34,9 +35,10 @@ function Consumption() {
           <Picture alt='Cascade drum' width={320} />
         </div>
 
-        <h4 className={`${styles.title} ${styles['title-second']}`}>
-          PRIMUS introduces the unique CASCADE TM DRUM
-        </h4>
+        <Title
+          text="PRIMUS introduces the unique CASCADE TM DRUM"
+          level="lvl-4"
+        />
 
         <p className={styles.description}>
           The CASCADE DRUM concept results in more perforations in the drum over

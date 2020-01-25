@@ -40,17 +40,6 @@
     margin-right: $margin;
   }
 
-  &__title {
-    margin-top: 0;
-    margin-bottom: $margin;
-    color: darken($color: $color-dark, $amount: 20%);
-    font-weight: 500;
-    font-size: $font-size * 1.1;
-    @media (min-width: $layout-breakpoint-sm) {
-      text-align: center;
-    }
-  }
-
   &__info {
     font-weight: 300;
     font-size: $font-size;

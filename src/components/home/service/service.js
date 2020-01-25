@@ -54,7 +54,7 @@ const services = [
 function Service() {
   return (
     <section className={styles.services}>
-      <Title title='Co oferujemy' />
+      <Title text="Co oferujemy" level="lvl-2" />
       <div className={styles['services-inner']}>
         {services.map(service => {
           const cardClass = `service-card-${service.id}`;
@@ -65,9 +65,7 @@ function Service() {
                 {service.icon}
               </div>
               <div className={styles['service-card__description']}>
-                <h3 className={styles['service-card__title']}>
-                  {service.title}
-                </h3>
+                <Title text={service.title} level="lvl-3" />
                 <p className={styles['service-card__info']}>{service.info}</p>
               </div>
             </div>

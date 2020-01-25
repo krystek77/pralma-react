@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './hero.module.scss';
 import bgDefault from '../../../assets/images/hero/bg_default.png';
 
+import Title from '../title';
+
 function Hero({ heroClass, img, alt, label, title, description, children }) {
   return (
     <header className={styles.hero}>
@@ -10,7 +12,7 @@ function Hero({ heroClass, img, alt, label, title, description, children }) {
       <div className={`${styles.container} ${styles[heroClass]}`}>
         <div className={styles.hero__banner}>
           <p className={styles.hero__label}>{label}</p>
-          <h1 className={styles.hero__title}>{title}</h1>
+          <Title text={title} level="lvl-1" />
           <p className={styles.hero__description}>{description}</p>
         </div>
         {children}
