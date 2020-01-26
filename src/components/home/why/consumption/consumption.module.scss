@@ -1,26 +1,39 @@
 @import '../../../../assets/scss/init.scss';
-.grid {
+
+.header {
+  &__description {
+    font-size: $font-size * 1.125;
+    font-weight: 300;
+    line-height: $line-height;
+    margin-bottom: $margin * 2;
+  }
+}
+.content {
   display: grid;
+
   @media (min-width: $layout-breakpoint-lg) {
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    place-items: center;
+    column-gap: $padding;
+    grid-template-columns: 360px auto;
+    &__images {
+      div {
+        margin-left: 0;
+      }
+    }
+  }
+  &__description {
+    padding: $padding;
+  }
+
+  &__text {
+    font-size: $font-size * 1.125;
+    font-weight: 300;
+    line-height: $line-height;
+    margin-bottom: $margin * 2;
+  }
+  &__footer {
+    margin-top: $margin * 2;
   }
 }
-//button link {
-.btn-link {
-  @include button();
-  box-shadow: 2px 2px 0px 0px $color-dark;
-  transition: all 0.3s ease-out;
-  &:hover {
-    @include button-hover();
-  }
+.footer {
+  text-align: center;
 }
-
-//description
-.description {
-  font-size: $font-size;
-  line-height: $line-height;
-  font-weight: 300;
-  margin-bottom: $margin;
-}
-
