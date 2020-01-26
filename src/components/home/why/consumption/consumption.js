@@ -7,6 +7,7 @@ import UnorderedList from '../../../common/unorderedList';
 import ListItem from '../../../common/unorderedList/listItem';
 import Profit from '../../../common/profit';
 import ButtonLink from '../../../common/buttonLink';
+import LabelList from '../../../common/labelList';
 
 function Consumption() {
   return (
@@ -45,6 +46,7 @@ function Consumption() {
                 washing result
               </p>
               <div className={styles.content__list}>
+                <LabelList label='Korzyści' />
                 <UnorderedList>
                   <ListItem text='Simpler unloading, as your linen does not stick to the drum' />
                   <ListItem text='Maximum water extraction, thanks to more perforations in the drum over the same surface' />
