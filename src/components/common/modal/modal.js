@@ -14,7 +14,10 @@ function Modal({ handleAccept }) {
       <div className={styles.modal}>
         <div className={styles.modal__topbar}>
           <Logo logoClass='logo-modal' />
-          <IoIosCloseCircle className={styles.modal__close} />
+          <IoIosCloseCircle
+            className={styles.modal__close}
+            onClick={handleAccept}
+          />
         </div>
         <div className={styles.modal__content}>
           <p className={styles.modal__salutation}>
