@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { IoIosCloseCircle } from 'react-icons/io';
 import styles from './modal.module.scss';
@@ -9,8 +9,16 @@ import UnorderedList from '../unorderedList';
 import ListItem from '../unorderedList/listItem';
 
 function Modal({ handleAccept }) {
+  const modal = useRef(null);
+  useEffect(() => {
+    const element = { ...modal };
+    element.current.parentElement.parentElement.classList.add('modal');
+    return () => {
+      element.current.parentElement.parentElement.classList.remove('modal');
+    };
+  }, []);
   return (
-    <div className={styles['backround-overlay']}>
+    <div className={styles['backround-overlay']} ref={modal}>
       <div className={styles.modal}>
         <div className={styles.modal__topbar}>
           <Logo logoClass='logo-modal' />
