@@ -51,7 +51,7 @@ function Button({
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit']),
   label: PropTypes.string.isRequired,
-  handleClickButton: PropTypes.func.isRequired,
+  handleClickButton: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.object]),
   active: PropTypes.bool,
   disabled: PropTypes.bool,
