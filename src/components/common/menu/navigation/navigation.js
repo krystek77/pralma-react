@@ -14,7 +14,7 @@ function Navigation({ isOpen }) {
   return (
     <div className={navigationClass}>
       <div className={styles.inner}>
-        <Logo logoClass={['logo-rounded']} />
+        <Logo logoClass="logo-rounded" />
         <MainMenu />
         <SigninMenu />
         {/** signoutMenu */}
