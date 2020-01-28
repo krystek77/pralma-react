@@ -14,11 +14,10 @@ const cookies = new Cookies();
 function App() {
   const [accept, setAccept] = useState(cookies.get('accept'));
   console.log('Invoke App', accept);
-
   function setAcceptCookie() {
     console.log('Set accept cookie');
-    setAccept(true);
-    cookies.set('accept', true);
+    setAccept('true');
+    cookies.set('accept', 'true');
   }
 
   useEffect(() => {
@@ -26,14 +25,14 @@ function App() {
 
     const isAccepted = cookies.get('accept');
     if (!isAccepted) {
-      setAccept(false);
-      cookies.set('accept', false);
+      setAccept('false');
+      cookies.set('accept', 'false');
     }
   }, [accept]);
 
   return (
     <>
-      {accept === false ? (
+      {accept === 'false' ? (
         <Modal handleAccept={setAcceptCookie} />
       ) : (
         console.log('you accepted cookies', accept)
