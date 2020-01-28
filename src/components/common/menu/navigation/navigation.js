@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './navigation.module.scss';
 
 import SigninMenu from './signinMenu';
+import SignoutMenu from './signoutMenu';
 import MainMenu from './mainMenu';
 import Logo from '../../logo';
 
@@ -14,10 +15,10 @@ function Navigation({ isOpen }) {
   return (
     <div className={navigationClass}>
       <div className={styles.inner}>
-        <Logo logoClass="logo-rounded" />
+        <Logo logoClass='logo-rounded' />
         <MainMenu />
         <SigninMenu />
-        {/** signoutMenu */}
+        <SignoutMenu />
       </div>
     </div>
   );
