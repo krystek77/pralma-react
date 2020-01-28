@@ -53,6 +53,41 @@
     color: lighten($color: $color-light, $amount: 10%);
   }
 
+  &-fullmenu {
+    @media (min-width: $layout-breakpoint-sm) {
+      background-color: $color-primary;
+      box-shadow: none;
+      border: 1px solid lighten($color: $color-primary, $amount: 10%);
+      border-radius: initial;
+      color: $color-light;
+      font-size: $font-size * 0.8125; //13px
+      outline: none;
+      padding: $padding * 0.666;
+      margin-left: $margin * 0.666;
+      margin-right: $margin * 0.666;
+      margin-bottom: 0;
+      cursor: pointer;
+      transform: all 0.3s ease-in;
+      line-height: 1;
+
+      .btn__icon {
+        margin-right: 0;
+        svg {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      .btn__label {
+        display: none;
+      }
+      &:hover {
+        box-shadow: none;
+        background-color: $color-primary;
+        border: 1px solid lighten($color: $color-primary, $amount: 20%);
+      }
+    }
+  }
+
   &-active {
     background-color: $color-secondary;
     border: 1px solid darken($color-secondary, 10%);
@@ -71,5 +106,16 @@
     background-color: lighten($color: $black, $amount: 50%);
     border-color: lighten($color: $black, $amount: 30%);
     color: lighten($color: $black, $amount: 30%);
+  }
+}
+.btn-fullmenu.btn-active {
+  background-color: $color-secondary;
+  border: 1px solid darken($color-secondary, 10%);
+
+  &:hover {
+    box-shadow: initial;
+    background-color: $color-secondary;
+    border: 1px solid darken($color-secondary, 10%);
+    color: lighten($color: $color-light, $amount: 10%);
   }
 }

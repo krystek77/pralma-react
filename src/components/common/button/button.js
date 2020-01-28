@@ -9,6 +9,7 @@ function Button({
   children,
   active,
   disabled,
+  fullMenu,
 }) {
   let buttonClass = '';
 
@@ -31,6 +32,13 @@ function Button({
    * Beacause value type attribute of button should not be dynamic
    * They are diffrent buttons. Eslint configuration forbids reset buttons because they are horribly bad fo UX
    */
+
+  buttonClass = fullMenu
+    ? buttonClass
+        .split(' ')
+        .concat(`${styles['btn-fullmenu']}`)
+        .join(' ')
+    : buttonClass;
 
   const renderedButton =
     type === 'button' ? (
@@ -55,6 +63,7 @@ Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.object]),
   active: PropTypes.bool,
   disabled: PropTypes.bool,
+  fullMenu: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -62,5 +71,6 @@ Button.defaultProps = {
   children: null,
   active: false,
   disabled: false,
+  fullMenu: false,
 };
 export default Button;
