@@ -1,0 +1,55 @@
+@import '../../../assets/scss/init.scss';
+
+.backround-overlay {
+  background-color: rgba($black, 0.8);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.modal {
+  background-color: $white;
+  padding: $padding * 1.5 $padding * 2 $padding;
+  width: 90%;
+  max-width: 700px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: $font-size;
+  font-weight: 300;
+  line-height: $line-height;
+
+  &__topbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $margin;
+  }
+  &__close {
+    font-size: $font-size * 1.5;
+    color: lighten($color: $black, $amount: 60%);
+    cursor: pointer;
+  }
+  &__salutation {
+    font-size: $font-size * 1.2;
+    font-weight: 600;
+    margin-bottom: $margin;
+  }
+  &__clause {
+    padding-right: $padding;
+    margin-bottom: $margin;
+    height: 300px;
+    overflow-y: scroll;
+  }
+  &__paragraph {
+    margin-bottom: $margin;
+  }
+  &__actions {
+    text-align: center;
+  }
+}
