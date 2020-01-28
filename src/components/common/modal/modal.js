@@ -83,7 +83,6 @@ function Modal({ handleAccept }) {
           </div>
         </div>
         <div className={styles.modal__actions}>
-          <Button type='button' label='odrzuć' />
           <Button
             type='button'
             label='akceptuj'
