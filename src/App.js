@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import Cookies from 'universal-cookie';
 import Modal from './components/common/modal';
 import HomePage from './components/pages/home';
 import ProductsPage from './components/pages/products';
@@ -8,10 +9,35 @@ import TechnologiesPage from './components/pages/technologies';
 import SigninPage from './components/pages/signin';
 import ErrorPage from './components/pages/404';
 
+const cookies = new Cookies();
+
 function App() {
+  const [accept, setAccept] = useState(cookies.get('accept'));
+  console.log('Invoke App', accept);
+
+  function setAcceptCookie() {
+    console.log('Set accept cookie');
+    setAccept(true);
+    cookies.set('accept', true);
+  }
+
+  useEffect(() => {
+    console.log('App useEffect hooks');
+
+    const isAccepted = cookies.get('accept');
+    if (!isAccepted) {
+      setAccept(false);
+      cookies.set('accept', false);
+    }
+  }, [accept]);
+
   return (
     <>
-      <Modal />
+      {accept === false ? (
+        <Modal handleAccept={setAcceptCookie} />
+      ) : (
+        console.log('you accepted cookies', accept)
+      )}
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/produkty' component={ProductsPage} />
