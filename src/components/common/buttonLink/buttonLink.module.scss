@@ -1,5 +1,4 @@
 @import '../../../assets/scss/init.scss';
-@import '../../../assets/scss/init.scss';
 
 .btn {
   background-color: $color-primary;
@@ -16,6 +15,7 @@
   cursor: pointer;
   transform: all 0.3s ease-in;
   line-height: 1;
+  display: block;
 
   &__icon {
     margin-right: $margin * 0.333;
@@ -66,6 +66,7 @@
       padding: $padding * 0.666;
       margin-left: $margin * 0.666;
       margin-right: $margin * 0.666;
+      margin-bottom: 0;
       cursor: pointer;
       transform: all 0.3s ease-in;
       line-height: 1;
