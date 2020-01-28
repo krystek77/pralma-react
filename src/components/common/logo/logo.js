@@ -7,7 +7,7 @@ import LogoImage from '../../../assets/images/logopralma.png';
 
 function Logo({ logoClass }) {
   return (
-    <Link to='/' className={styles[logoClass]}>
+    <Link to='/' className={`${styles.logo} ${styles[logoClass]}`}>
       <img
         className={styles.logo__image}
         src={LogoImage}
@@ -18,10 +18,10 @@ function Logo({ logoClass }) {
 }
 
 Logo.propTypes = {
-  logoClass: PropTypes.arrayOf(PropTypes.string),
+  logoClass: PropTypes.string,
 };
 
 Logo.defaultProps = {
-  logoClass: ['logo'],
+  logoClass: 'logo',
 };
 export default Logo;
