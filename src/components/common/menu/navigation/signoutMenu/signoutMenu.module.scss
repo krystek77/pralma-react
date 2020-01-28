@@ -1,0 +1,24 @@
+@import '../../../../../assets/scss/init.scss';
+.signoutMenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: 3 * $padding;
+  padding-bottom: 3 * $padding;
+  background-color: lighten($color: $black, $amount: 50%);
+  width: 100%;
+
+  @media (min-width: $layout-breakpoint-sm) {
+    padding: initial;
+    background-color: initial;
+    width: initial;
+  }
+
+  &__item {
+    margin-right: $margin;
+    @media (min-width: $layout-breakpoint-sm) {
+      margin: initial;
+    }
+  }
+}
