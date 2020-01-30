@@ -3,6 +3,7 @@ import Layout from '../common/layout';
 import Hero from '../common/hero';
 import ServiceSection from '../home/service';
 import WhySection from '../home/why';
+import Technology from '../home/technology';
 import bgImage from '../../assets/images/hero/bg_home.png';
 
 function HomePage() {
@@ -19,6 +20,7 @@ function HomePage() {
           integrated quality vectors. Authoritatively parallel task low-risk
           high-yield e-tailers for real-time niche.'
       />
+      <Technology />
       <WhySection />
       <ServiceSection />
     </Layout>
