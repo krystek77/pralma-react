@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './greeting.module.scss';
-import { UserContext } from '../../../user-context';
+import { UserConsumer, CONTEXT_OBSERVABLE_MAP } from '../../../user-context';
 
 function Greeting({ disabled }) {
-  const userContext = useContext(UserContext);
   let greetingClass = `${styles.greeting}`;
 
   if (disabled) {
@@ -13,10 +12,14 @@ function Greeting({ disabled }) {
   }
 
   return (
-    <div className={greetingClass}>
-      <span className={styles.greeting__word}>Witaj </span>
-      <span className={styles.greeting__name}>{userContext.name}</span>
-    </div>
+    <UserConsumer unstable_observedBits={CONTEXT_OBSERVABLE_MAP.name}>
+      {({ name }) => (
+        <div className={greetingClass}>
+          <span className={styles.greeting__word}>Witaj </span>
+          <span className={styles.greeting__name}>{name}</span>
+        </div>
+      )}
+    </UserConsumer>
   );
 }
 

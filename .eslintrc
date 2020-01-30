@@ -14,6 +14,12 @@
   },
   "rules": {
     "react/jsx-filename-extension": 0,
-    "react/prop-types": 2
+    "react/prop-types": 2,
+    "no-bitwise": [
+      "error",
+      {
+        "allow": ["|="]
+      }
+    ]
   }
 }

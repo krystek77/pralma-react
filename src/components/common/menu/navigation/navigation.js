@@ -6,6 +6,7 @@ import SigninMenu from './signinMenu';
 import SignoutMenu from './signoutMenu';
 import MainMenu from './mainMenu';
 import Logo from '../../logo';
+import { UserConsumer } from '../../../../user-context';
 
 function Navigation({ isOpen }) {
   const navigationClass = isOpen
@@ -17,8 +18,9 @@ function Navigation({ isOpen }) {
       <div className={styles.inner}>
         <Logo logoClass='logo-rounded' />
         <MainMenu />
-        <SigninMenu />
-        <SignoutMenu />
+        <UserConsumer>
+          {({ isLogin }) => <>{isLogin ? <SignoutMenu /> : <SigninMenu />}</>}
+        </UserConsumer>
       </div>
     </div>
   );
