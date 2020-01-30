@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { GoSignOut } from 'react-icons/go';
 import styles from './signoutMenu.module.scss';
 
 import Button from '../../../button';
 import Greeting from '../../../greeting';
 
-function SignoutMenu({ isOpen }) {
+function SignoutMenu() {
   return (
     <>
-      {isOpen ? null : <Greeting />}
+      <Greeting />
       <ul className={styles.signoutMenu}>
         <li className={styles.signoutMenu__item}>
           <Button type='button' label='wyloguj' fullMenu>
@@ -20,7 +19,5 @@ function SignoutMenu({ isOpen }) {
     </>
   );
 }
-SignoutMenu.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-};
+
 export default SignoutMenu;
