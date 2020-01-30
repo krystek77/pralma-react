@@ -6,6 +6,7 @@ import SigninMenu from './signinMenu';
 import SignoutMenu from './signoutMenu';
 import MainMenu from './mainMenu';
 import Logo from '../../logo';
+import Greeting from '../../greeting';
 
 function Navigation({ isOpen }) {
   const navigationClass = isOpen
@@ -15,10 +16,11 @@ function Navigation({ isOpen }) {
   return (
     <div className={navigationClass}>
       <div className={styles.inner}>
+        {isOpen && <Greeting />}
         <Logo logoClass='logo-rounded' />
         <MainMenu />
         <SigninMenu />
-        <SignoutMenu />
+        <SignoutMenu isOpen={isOpen} />
       </div>
     </div>
   );
