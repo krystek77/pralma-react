@@ -1,0 +1,25 @@
+@import '../../../assets/scss/init.scss';
+
+.greeting {
+  padding: $padding * 0.666 $padding;
+  margin-bottom: $margin * 2;
+  font-weight: 300;
+  font-size: $font-size * 0.9;
+
+  @media (min-width: $layout-breakpoint-sm) {
+    margin-bottom: unset;
+    padding: 0;
+    margin-left: $margin * 0.333;
+    margin-right: $margin * 0.333;
+    color: $color-light;
+  }
+  &__name {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: $font-size;
+    font-style: italic;
+    font-weight: 600;
+  }
+  &-disabled {
+    display: none;
+  }
+}
