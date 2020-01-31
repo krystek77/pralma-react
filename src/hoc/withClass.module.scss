@@ -1,0 +1,40 @@
+@import '../assets/scss/init.scss';
+
+.next {
+  position: absolute;
+  right: 0;
+  bottom: -$margin * 0.666;
+  margin-right: $margin * 0.666;
+  button {
+    padding: 0;
+    margin: 0;
+  }
+  svg {
+    font-size: $font-size * 2;
+  }
+  @media (min-width: $layout-breakpoint-sm) {
+    right: 0;
+    margin-right: -$margin * 2;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}
+.prev {
+  position: absolute;
+  left: 0;
+  bottom: -$margin * 0.666;
+  margin-left: $margin * 0.666;
+  button {
+    padding: 0;
+    margin: 0;
+  }
+  svg {
+    font-size: $font-size * 2;
+  }
+  @media (min-width: $layout-breakpoint-sm) {
+    left: 0;
+    margin-left: -$margin * 2;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}
