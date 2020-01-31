@@ -20,6 +20,13 @@
       {
         "allow": ["|="]
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "custom": "ignore"
+      }
+    ],
+    "react/display-name": "off"
   }
 }
