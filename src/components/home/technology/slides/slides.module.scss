@@ -1,0 +1,16 @@
+@import '../../../../assets/scss/init.scss';
+
+.slides {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.dots {
+  text-align: center;
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
