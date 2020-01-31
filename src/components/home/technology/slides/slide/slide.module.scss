@@ -1,0 +1,22 @@
+@import '../../../../../assets/scss/init.scss';
+
+.slide {
+  display: block;
+  padding: $padding;
+  width: 320px;
+  max-width: 360px;
+  border: 1px solid $black;
+  color: $color-light;
+  height: 576px;
+  flex-shrink: 0;
+}
+.inner-wrapper {
+  background-color: $black;
+  text-align: center;
+  padding: $padding * 2 $padding;
+  height: 100%;
+  transition: background-color .3s ease-out;
+  &:hover {
+    background-color: darken($color: $black, $amount: 5%);
+  }
+}
