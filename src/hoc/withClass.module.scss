@@ -2,6 +2,7 @@
 
 .next {
   position: absolute;
+  z-index: 1;
   right: 0;
   bottom: -$margin * 0.666;
   margin-right: $margin * 0.666;
@@ -21,6 +22,7 @@
 }
 .prev {
   position: absolute;
+  z-index: 1;
   left: 0;
   bottom: -$margin * 0.666;
   margin-left: $margin * 0.666;
