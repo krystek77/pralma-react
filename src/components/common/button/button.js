@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './button.module.scss';
+import withClass from '../../../hoc/widthClass';
 
 function Button({
   type,
@@ -58,7 +59,7 @@ function Button({
 
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit']),
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   handleClickButton: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.object]),
   active: PropTypes.bool,
@@ -68,9 +69,13 @@ Button.propTypes = {
 
 Button.defaultProps = {
   type: 'button',
+  label: '',
   children: null,
   active: false,
   disabled: false,
   fullMenu: false,
 };
+
+export const Next = withClass(Button, 'next');
+export const Prev = withClass(Button, 'prev');
 export default Button;
