@@ -40,6 +40,14 @@ function MainMenu() {
       </li>
       <li className={styles['main-menu__item']}>
         <Link
+          to='/z-ostatniej-chwili'
+          className={styles['main-menu__link']}
+          activeClassName={styles.active}>
+          Wiadomości
+        </Link>
+      </li>
+      <li className={styles['main-menu__item']}>
+        <Link
           to='/kontakt'
           className={styles['main-menu__link']}
           activeClassName={styles.active}>
