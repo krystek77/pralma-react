@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import Modal from './components/common/modal';
 import HomePage from './components/pages/home';
+import CustomersPage from './components/pages/customers';
 import ProductsPage from './components/pages/products';
 import TechnologiesPage from './components/pages/technologies';
 import AboutUsPage from './components/pages/about';
@@ -42,6 +43,7 @@ function App() {
       )}
       <Switch>
         <Route exact path='/' component={HomePage} />
+        <Route exact path='/klienci' component={CustomersPage} />
         <Route exact path='/produkty' component={ProductsPage} />
         <Route exact path='/technologie' component={TechnologiesPage} />
         <Route exact path='/o-nas' component={AboutUsPage} />

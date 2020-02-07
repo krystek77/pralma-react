@@ -16,6 +16,15 @@ function MainMenu() {
       </li>
       <li className={styles['main-menu__item']}>
         <Link
+          to='/klienci'
+          className={styles['main-menu__link']}
+          exact
+          activeClassName={styles.active}>
+          Klienci
+        </Link>
+      </li>
+      <li className={styles['main-menu__item']}>
+        <Link
           to='/produkty'
           className={styles['main-menu__link']}
           activeClassName={styles.active}>
