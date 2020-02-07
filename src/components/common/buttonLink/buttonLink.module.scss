@@ -55,7 +55,7 @@
   }
 
   &-fullmenu {
-    @media (min-width: $layout-breakpoint-sm) {
+    @media (min-width: $layout-breakpoint-lg) {
       background-color: $color-primary;
       box-shadow: none;
       border: 1px solid lighten($color: $color-primary, $amount: 10%);

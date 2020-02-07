@@ -6,7 +6,7 @@
   font-weight: 300;
   font-size: $font-size * 0.9;
 
-  @media (min-width: $layout-breakpoint-sm) {
+  @media (min-width: $layout-breakpoint-lg) {
     margin-bottom: unset;
     padding: 0;
     margin-left: $margin * 0.333;

@@ -14,7 +14,7 @@
   &-show {
     left: 0;
   }
-  @media (min-width: $layout-breakpoint-sm) {
+  @media (min-width: $layout-breakpoint-lg) {
     position: static;
     transform: none;
     box-shadow: none;
@@ -31,7 +31,7 @@
   align-items: center;
   height: 100%;
 
-  @media (min-width: $layout-breakpoint-sm) {
+  @media (min-width: $layout-breakpoint-lg) {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;

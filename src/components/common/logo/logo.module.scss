@@ -28,7 +28,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    @media (min-width: $layout-breakpoint-sm) {
+    @media (min-width: $layout-breakpoint-lg) {
       display: none;
     }
   }

@@ -9,7 +9,7 @@
   background-color: lighten($color: $black, $amount: 50%);
   width: 100%;
 
-  @media (min-width: $layout-breakpoint-sm) {
+  @media (min-width: $layout-breakpoint-lg) {
     padding: initial;
     background-color: initial;
     width: initial;
@@ -17,7 +17,7 @@
 
   &__item {
     margin-right: $margin;
-    @media (min-width: $layout-breakpoint-sm) {
+    @media (min-width: $layout-breakpoint-lg) {
       margin: initial;
     }
   }

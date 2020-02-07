@@ -10,7 +10,7 @@
   padding-top: 3 * $padding;
   padding-bottom: 3 * $padding;
   // height: 100%;
-  @media (min-width: $layout-breakpoint-sm) {
+  @media (min-width: $layout-breakpoint-lg) {
     flex-direction: row;
     justify-content: flex-end;
     padding: initial;
@@ -18,7 +18,7 @@
   }
   &__item {
     width: 100%;
-    @media (min-width: $layout-breakpoint-sm) {
+    @media (min-width: $layout-breakpoint-lg) {
       width: auto;
     }
   }
@@ -33,7 +33,7 @@
     font-weight: 400;
     transition: color 0.3s ease-out;
 
-    @media (min-width: $layout-breakpoint-sm) {
+    @media (min-width: $layout-breakpoint-lg) {
       font-size: 14px;
       font-weight: 400;
       position: relative;
