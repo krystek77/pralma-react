@@ -38,6 +38,14 @@ function MainMenu() {
           O nas
         </Link>
       </li>
+      <li className={styles['main-menu__item']}>
+        <Link
+          to='/kontakt'
+          className={styles['main-menu__link']}
+          activeClassName={styles.active}>
+          Kontakt
+        </Link>
+      </li>
     </ul>
   );
 }
