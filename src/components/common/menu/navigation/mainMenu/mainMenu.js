@@ -30,6 +30,14 @@ function MainMenu() {
           Technologie
         </Link>
       </li>
+      <li className={styles['main-menu__item']}>
+        <Link
+          to='/o-nas'
+          className={styles['main-menu__link']}
+          activeClassName={styles.active}>
+          O nas
+        </Link>
+      </li>
     </ul>
   );
 }
