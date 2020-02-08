@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import styles from './slides.module.scss';
 
 import Dot from './dot';
-import { Next, Prev } from '../../../common/button';
 
 function Slides({ children }) {
   function renderDots() {
@@ -19,15 +17,7 @@ function Slides({ children }) {
   }
   return (
     <>
-      <div className={styles.slides}>
-        <Next active>
-          <MdNavigateNext />
-        </Next>
-        <Prev>
-          <MdNavigateBefore />
-        </Prev>
-        {children}
-      </div>
+      <div className={styles.slides}>{children}</div>
       {renderDots()}
     </>
   );
