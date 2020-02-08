@@ -12,10 +12,10 @@ function Hero({ heroClass, img, alt, label, title, description, children }) {
       <div className={`${styles.container} ${styles[heroClass]}`}>
         <div className={styles.hero__banner}>
           <p className={styles.hero__label}>{label}</p>
-          <Title text={title} level="lvl-1" />
+          <Title text={title} level='lvl-1' />
           <p className={styles.hero__description}>{description}</p>
+          {children}
         </div>
-        {children}
       </div>
     </header>
   );
