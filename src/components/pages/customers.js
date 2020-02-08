@@ -3,7 +3,8 @@ import Layout from '../common/layout';
 import Hero from '../common/hero';
 import PageContent from '../common/pageContent';
 
-function CustomersPage() {
+function CustomersPage(props) {
+  console.log(props);
   return (
     <Layout>
       <Hero
