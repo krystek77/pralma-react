@@ -1,12 +1,14 @@
 import React from 'react';
 import Layout from '../common/layout';
 import Hero from '../common/hero';
+import bgImage from '../../assets/images/news/bg_hero_pralma_grey-min.png';
 
 function NewsPage() {
   return (
     <Layout>
       <Hero
         heroClass={['hero-news']}
+        img={bgImage}
         alt='Okładka strony wiadomości'
         label='Z ostatniej chwili'
         title='Bądź na bieżąco z najnowszymi rozwiązaniami i wiadomościami w branży'
