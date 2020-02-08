@@ -4,7 +4,8 @@ import Hero from '../common/hero';
 import ServiceSection from '../home/service';
 import WhySection from '../home/why';
 import Technology from '../home/technology';
-import bgImage from '../../assets/images/hero/bg_home.png';
+import bgImage from '../../assets/images/home/bg_hero_primus_dark-min.png';
+import { ActionButton } from '../common/buttonLink';
 
 function HomePage() {
   return (
@@ -18,8 +19,9 @@ function HomePage() {
         description='Globally maximize innovative functionalities after dynamic
           partnerships. Holisticly deliver prospective web-readiness rather than
           integrated quality vectors. Authoritatively parallel task low-risk
-          high-yield e-tailers for real-time niche.'
-      />
+          high-yield e-tailers for real-time niche.'>
+        <ActionButton path="/produkty" label="Poznaj produkty" />
+      </Hero>
       <Technology />
       <WhySection />
       <ServiceSection />
