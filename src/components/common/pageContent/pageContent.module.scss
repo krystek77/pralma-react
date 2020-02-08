@@ -1,0 +1,9 @@
+@import '../../../assets/scss/init.scss';
+
+.page-content {
+  width: 100%;
+  display: grid;
+  @media (min-width: $layout-breakpoint-lg) {
+    grid-template-columns: 75% 25%;
+  }
+}
