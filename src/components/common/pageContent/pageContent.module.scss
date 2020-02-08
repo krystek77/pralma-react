@@ -3,6 +3,8 @@
 .page-content {
   width: 100%;
   display: grid;
+  padding-top: $margin * 3;
+  padding-bottom: $margin * 3;
   @media (min-width: $layout-breakpoint-lg) {
     grid-template-columns: 75% 25%;
   }
