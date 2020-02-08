@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../common/layout';
 import Hero from '../common/hero';
+import bgImage from '../../assets/images/about/bg_hero_pralma_dark-min.png';
 
 function AboutUsPage() {
   return (
@@ -8,12 +9,12 @@ function AboutUsPage() {
       <Hero
         heroClass={['hero-about']}
         alt='Okładka strony o nas'
+        img={bgImage}
         label='O nas'
         title='Producent przemysłowych urządzeń pralniczych oraz dystrybutor maszyn marki Primus'
-        description='Globally maximize innovative functionalities after dynamic
-          partnerships. Holisticly deliver prospective web-readiness rather than
-          integrated quality vectors. Authoritatively parallel task low-risk
-          high-yield e-tailers for real-time niche.'
+        description='Od 1992 roku Pralma zajmuje się dostarczaniem technologii pralniczych produkując przemysłowe wyposażenie pralnicze dla każdego typu pralni. 
+        Jesteśmy również autoryzowanym dystrybutorem urządzeń marki Primus - wiodącego producenta na świecie. Świadczymy serwis urządzeń, montaż oraz szkolenia
+        z technologii prania.'
       />
     </Layout>
   );
