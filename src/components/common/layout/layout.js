@@ -13,7 +13,7 @@ function Layout({ children }) {
       <SEO />
       <Menu />
       <ShortContact />
-      <div className={styles.content}>{children} -- children --</div>
+      <div className={styles.content}>{children}</div>
       <Footer />
     </div>
   );
