@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../common/layout';
 import Hero from '../common/hero';
+import PageContent from '../common/pageContent';
 
 function CustomersPage() {
   return (
@@ -15,6 +16,20 @@ function CustomersPage() {
           integrated quality vectors. Authoritatively parallel task low-risk
           high-yield e-tailers for real-time niche.'
       />
+      <PageContent>
+        <main style={{ backgroundColor: 'grey' }}>--- main customers ---</main>
+        <div style={{ backgroundColor: 'orange' }}>
+          --- navigation customers ---
+        </div>
+        <aside
+          style={{
+            backgroundColor: 'blue',
+            gridColumnStart: 1,
+            gridColumnEnd: 'span 2',
+          }}>
+          --- links customers ---
+        </aside>
+      </PageContent>
     </Layout>
   );
 }
