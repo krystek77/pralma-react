@@ -1,1 +1,1 @@
-export { default } from './buttonLink';
+export { default, ActionButton } from './buttonLink';

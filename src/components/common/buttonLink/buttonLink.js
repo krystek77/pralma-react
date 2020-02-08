@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './buttonLink.module.scss';
+import withClass from '../../../hoc/widthClass';
 
 function ButtonLink({ path, label, children, disabled, fullMenu }) {
   let buttonClass = '';
@@ -44,4 +45,6 @@ ButtonLink.defaultProps = {
   disabled: false,
   fullMenu: false,
 };
+
+export const ActionButton = withClass(ButtonLink, 'action-btn');
 export default ButtonLink;
