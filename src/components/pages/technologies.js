@@ -5,7 +5,7 @@ import Hero from '../common/hero';
 import PageContent from '../common/pageContent';
 import Main from '../common/main';
 import AsideNavigation from '../common/asideNavigation';
-import TitleNavigation from '../common/asideNavigation/titleNavigation';
+import TitleNavigation from '../common/titleNavigation';
 import LinksList from '../common/linksList';
 import LinkList from '../common/linksList/linkList';
 import bgImage from '../../assets/images/hero/bg_technologies.png';
