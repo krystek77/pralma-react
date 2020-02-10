@@ -1,4 +1,10 @@
 @import '../../../assets/scss/init.scss';
 .aside-navigation {
-  
+  height: max-content;
+  @media (min-width: $layout-breakpoint-lg) {
+    border-left: 1px solid lighten($color: $black, $amount: 70%);
+    padding-top: $padding;
+    padding-left: $padding;
+    padding-bottom: $padding;
+  }
 }
