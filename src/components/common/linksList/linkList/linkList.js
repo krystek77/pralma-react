@@ -5,8 +5,11 @@ import styles from './linkList.module.scss';
 
 function LinkList({ path, label }) {
   return (
-    <li className={styles['links-list__link']}>
-      <Link to={path} className={styles['links-list__anchor']}>
+    <li className={styles['links-list__item']}>
+      <Link
+        to={path}
+        className={styles['links-list__link']}
+        activeClassName={styles.active}>
         {label}
       </Link>
     </li>
