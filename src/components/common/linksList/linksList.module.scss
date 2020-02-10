@@ -1,1 +1,20 @@
 @import '../../../assets/scss/init.scss';
+.links-list {
+  margin-bottom: $margin * 2;
+  &--default {
+    a {
+      color: $color-primary;
+      padding-top: $padding * 0.333;
+      padding-bottom: $padding * 0.333;
+      transition: color 0.3s ease-out;
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+  &--footer {
+    a {
+      color: $color-light;
+    }
+  }
+}
