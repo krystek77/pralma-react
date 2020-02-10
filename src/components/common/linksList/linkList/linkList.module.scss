@@ -1,6 +1,9 @@
 @import '../../../../assets/scss/init.scss';
 
 .links-list {
+  &__item {
+    margin-bottom: $margin * 0.1333;
+  }
   &__link {
     display: block;
     font-weight: 300;
@@ -8,5 +11,5 @@
 }
 .active {
   color: $color-secondary !important;
-  font-weight: 500!important;
+  font-weight: 500 !important;
 }
