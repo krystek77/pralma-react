@@ -15,6 +15,10 @@
   &--footer {
     a {
       color: $color-light;
+      font-size: $font-size * 0.9;
+      &:hover {
+        color: $color-secondary;
+      }
     }
   }
 }
