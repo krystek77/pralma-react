@@ -1,0 +1,49 @@
+@import '../../../assets/scss/init.scss';
+.address {
+  font-family: 'Source Sans Pro', sans-serif;
+  &__company {
+    margin-bottom: $margin;
+  }
+  &__name {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: $font-size;
+    margin-bottom: $margin * 0.2;
+  }
+  &__street {
+    font-weight: 300;
+  }
+  &__registers,
+  &__contacts,
+  &__department {
+    font-weight: 300;
+    margin-bottom: $margin * 0.5;
+  }
+  &__name-department {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: $margin * 0.666;
+    color: $color-secondary;
+  }
+  &__contact-department {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: $margin * 0.2;
+  }
+}
+.mark {
+  display: inline-block;
+  font-weight: 600;
+  width: 70px;
+}
+.email {
+  color: $color-secondary;
+  transition: color 0.3s ease-out;
+  &:hover {
+    font-weight: 600;
+  }
+}
+.icon {
+  margin-right: $margin;
+}
