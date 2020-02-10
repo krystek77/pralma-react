@@ -5,7 +5,10 @@
   display: grid;
   padding-top: $margin * 3;
   padding-bottom: $margin * 3;
+  padding-left: $padding;
+  padding-right: $padding;
   @media (min-width: $layout-breakpoint-lg) {
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 75% calc(25% - 15px);
+    column-gap: 15px;
   }
 }
