@@ -2,5 +2,8 @@
 
 .copyright__text {
   text-align: center;
-  font-size: $font-size *0.875;
+  font-size: $font-size * 0.875;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  background-color: lighten($color: $color-dark, $amount: 1%);
 }
