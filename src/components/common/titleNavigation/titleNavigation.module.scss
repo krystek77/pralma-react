@@ -1,0 +1,26 @@
+@import '../../../assets/scss/init.scss';
+.title-navigation {
+  display: block;
+  margin-bottom: $margin;
+  font-weight: 700;
+  font-size: $font-size * 1.2;
+  &--default {
+    color: $black;
+  }
+  &--footer {
+    color: darken($color: $white, $amount: 10%);
+    font-size: $font-size;
+    &-small {
+      color: darken($color: $white, $amount: 10%);
+      font-size: $font-size * 0.8;
+      font-weight: 300;
+      margin-bottom: $margin * 0.5;
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+}
+.active {
+  text-decoration: underline;
+}
