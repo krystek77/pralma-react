@@ -1,0 +1,15 @@
+@import '../../../../assets/scss/init.scss';
+
+.customer-card {
+  border: 1px solid lighten($color: $black, $amount: 30%);
+  display: block;
+  max-width: 265px;
+  background-color: $black;
+  margin-left: $margin * 0.333;
+  margin-right: $margin * 0.333;
+  margin-bottom: $margin * 0.666;
+  transition: background-color 0.3s ease-out;
+  &:hover {
+    background-color: darken($color: $black, $amount: 5%);
+  }
+}
