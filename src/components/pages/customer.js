@@ -26,9 +26,7 @@ function SingleCustomer({ match }) {
       <PageContent>
         <Main>{params.slug}</Main>
         <AsideNavigation>
-          {/** link to customers page */}
           <TitleNavigation path='/klienci' label='Nasi Klienci' />
-          {/** links to single customer */}
           <LinksList>
             <LinkList path='/klienci/goscinnosc' label='Gościnność' />
             <LinkList
