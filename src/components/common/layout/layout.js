@@ -5,6 +5,7 @@ import styles from './layout.module.scss';
 import SEO from '../seo';
 import Menu from '../menu';
 import ShortContact from '../shortContact';
+import Fusion from '../fusion';
 import Footer from '../footer';
 
 function Layout({ children }) {
@@ -14,6 +15,7 @@ function Layout({ children }) {
       <Menu />
       <ShortContact />
       <div className={styles.content}>{children}</div>
+      <Fusion />
       <Footer />
     </div>
   );
