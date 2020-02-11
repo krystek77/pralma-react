@@ -1,0 +1,17 @@
+@import '../../../assets/scss/init.scss';
+
+.fusion {
+  padding: $padding * 2 $padding;
+  width: 100%;
+  background-color: $color-primary;
+  color: $color-light;
+  text-align: center;
+  &-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.icon {
+  font-size: 48px;
+  color: $color-dark;
+}
