@@ -8,7 +8,15 @@
   text-align: center;
   &-inner {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    column-gap: $padding;
+    row-gap: $padding;
+    @media (min-width: $layout-breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $layout-breakpoint-xlg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
 .icon {
