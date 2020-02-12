@@ -12,8 +12,10 @@ import LinksList from '../common/linksList';
 import LinkList from '../common/linksList/linkList';
 
 import defaultImg from '../../assets/images/customers/default_customers_250_150.png';
-import hospitality from '../../assets/images/customers/hospitality.png';
-import restaurants from '../../assets/images/customers/restaurants.png';
+import goscinnosc from '../../assets/images/customers/gościnność.png';
+import opiekazdrowotna from '../../assets/images/customers/opieka zdrowotna.png';
+import restauracje from '../../assets/images/customers/restauracje.png';
+import pralniekomercyjne from '../../assets/images/customers/pralnie komercyjne.png';
 
 import CustomerCards from '../customers/customerCards';
 import CustomerCard from '../customers/customerCards/customerCard';
@@ -48,7 +50,7 @@ function CustomersPage({ match }) {
           </Description>
           <CustomerCards>
             <CustomerCard path={`${url}/goscinnosc`}>
-              <Picture src={hospitality} />
+              <Picture src={goscinnosc} />
               <Description
                 descriptionClass='description--small-light'
                 text={`For more than 70 years, UniMac has been focused on providing
@@ -60,7 +62,7 @@ function CustomersPage({ match }) {
               </Description>
             </CustomerCard>
             <CustomerCard path={`${url}/opieka-dlugoterminowa`}>
-              <Picture src={restaurants} />
+              <Picture src={opiekazdrowotna} />
               <Description
                 descriptionClass='description--small-light'
                 text={`For more than 70 years, UniMac has been focused on providing
@@ -72,7 +74,7 @@ function CustomersPage({ match }) {
               </Description>
             </CustomerCard>
             <CustomerCard path={`${url}/pralnie-komercyjne`}>
-              <Picture src={defaultImg} />
+              <Picture src={pralniekomercyjne} />
               <Description
                 descriptionClass='description--small-light'
                 text={`For more than 70 years, UniMac has been focused on providing
@@ -167,7 +169,7 @@ function CustomersPage({ match }) {
       <CustomerLinks>
         <CustomerCards>
           <CustomerCard path={`${url}/restuaracje`}>
-            <Picture src={restaurants} />
+            <Picture src={restauracje} />
             <Description>
               <Title level='lvl-3' text='Resturacje' />
             </Description>
