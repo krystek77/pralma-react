@@ -5,8 +5,8 @@ import styles from './customerLinks.module.scss';
 function CustomerLinks({ children }) {
   return (
     <aside className={styles['customer-links']}>
-      {/* <div className={styles['container']}>{children}</div> */}
-      {children}
+      <div className={styles.container}>{children}</div>
+      {/* {children} */}
     </aside>
   );
 }
