@@ -137,46 +137,27 @@ function CustomersPage({ match }) {
           )}
           {/** customers card end */}
         </Main>
+
         <AsideNavigation>
           <TitleNavigation path={`${url}`} label='Nasi Klienci' />
+
+          {/** side navigation start */}
           <LinksList>
-            <LinkList path={`${url}/goscinnosc`} label='Gościnność' />
-            <LinkList
-              path={`${url}/opieka-dlugoterminowa`}
-              label='Opieka długoterminowa'
-            />
-            <LinkList
-              path={`${url}/pralnie-komercyjne`}
-              label='Pralnie komercyjne'
-            />
-            <LinkList path={`${url}/straz-pozarna`} label='Straż pożarna' />
-            <LinkList path={`${url}/kluby-sportowe`} label='Kluby sportowe' />
-            <LinkList
-              path={`${url}/pralnie-chemiczne`}
-              label='Pralnie chemiczne'
-            />
-            <LinkList path={`${url}/restauracje`} label='Restauracje' />
-            <LinkList path={`${url}/wellness-spa`} label='Wellness & SPA' />
-            <LinkList path={`${url}/armia`} label='Armia' />
-            <LinkList
-              path={`${url}/marynarka-wojenna`}
-              label='Marynarka Wojenna'
-            />
-            <LinkList
-              path={`${url}/obiekty-mieszkalne`}
-              label='Obiekty mieszkalne'
-            />
-            <LinkList path={`${url}/zaklady-pracy`} label='Zakłady pracy' />
-            <LinkList
-              path={`${url}/pralnie-samoobslugowe`}
-              label='Pralnie samoobsługowe'
-            />
-            <LinkList path={`${url}/szpitale`} label='Szpitale' />
-            <LinkList
-              path={`${url}/opieka-nad-dziecmi`}
-              label='Opieka nad dziećmi'
-            />
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              customers.allCustomers.map(customer => {
+                return (
+                  <LinkList
+                    key={customer.id}
+                    path={`${url}/${customer.slug}`}
+                    label={customer.title}
+                  />
+                );
+              })
+            )}
           </LinksList>
+          {/** side navigation end */}
         </AsideNavigation>
       </PageContent>
 
