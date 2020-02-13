@@ -8,7 +8,7 @@ function CustomerCards({ children }) {
 
 CustomerCards.propTypes = {
   children: PropTypes.oneOfType([
-    PropTypes.element,
+    PropTypes.node,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
 };
