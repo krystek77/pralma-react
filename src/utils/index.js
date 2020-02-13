@@ -1,1 +1,1 @@
-export { setCookie, getCookieValue } from './function';
+export { setCookie, getCookieValue, limitedString } from './function';
