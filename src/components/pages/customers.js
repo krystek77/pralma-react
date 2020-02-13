@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../common/layout';
 import Hero from '../common/hero';
@@ -11,20 +11,78 @@ import TitleNavigation from '../common/titleNavigation';
 import LinksList from '../common/linksList';
 import LinkList from '../common/linksList/linkList';
 
-import defaultImg from '../../assets/images/customers/default_customers_250_150.png';
-import goscinnosc from '../../assets/images/customers/gościnność.png';
-import opiekazdrowotna from '../../assets/images/customers/opieka zdrowotna.png';
-import restauracje from '../../assets/images/customers/restauracje.png';
-import pralniekomercyjne from '../../assets/images/customers/pralnie komercyjne.png';
-
 import CustomerCards from '../customers/customerCards';
 import CustomerCard from '../customers/customerCards/customerCard';
 import Picture from '../common/picture';
 
 import CustomerLinks from '../customers/customerLinks';
 
+import { limitedString } from '../../utils';
+
 function CustomersPage({ match }) {
+  // console.log('Into customer page');
   const { url } = match;
+  const [customers, setCustomers] = useState({ allCustomers: [] });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    // console.log('CustomersPage useEffect START');
+    let didUnmount = false;
+
+    const getAllCustomers = async () => {
+      // console.log('Into asyncfunction');
+      setIsLoading(true);
+
+      try {
+        const response = await fetch(process.env.REACT_APP_API_BASE_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN_DATOCMS_READ_ONLY}`,
+          },
+          body: JSON.stringify({
+            query: `query Customers {
+                      allCustomers(orderBy:id_ASC) {
+                        id
+                        description
+                        extract
+                        title
+                        slug
+                        images {
+                          title
+                          alt
+                          url
+      
+                        }
+                      }
+                    }`,
+          }),
+        });
+        const result = await response.json();
+        // console.log('After result');
+        if (!didUnmount) {
+          // console.log('setCustomers');
+          setCustomers(result.data);
+        }
+      } catch (error) {
+        setIsError(true);
+        // console.error(error);
+      }
+      setIsLoading(false);
+    };
+    getAllCustomers();
+
+    // console.log('CustomersPage useEffect END');
+    return () => {
+      didUnmount = true;
+      // console.log('CustomersPage UNMOUNTED');
+    };
+  }, []);
+
+  // console.log('CustomersPage AFTER useEffect');
+  // console.log(customers);
   return (
     <Layout>
       <Hero
@@ -37,6 +95,7 @@ function CustomersPage({ match }) {
           integrated quality vectors. Authoritatively parallel task low-risk
           high-yield e-tailers for real-time niche.'
       />
+      {isError && <div>Something went wrong</div>}
       <PageContent>
         <Main>
           <Description
@@ -48,80 +107,35 @@ function CustomersPage({ match }) {
       operation requires, you can be sure that UniMac has a solution.`}>
             <Title level='lvl-2' text='Poważnie o Twojej pralni' />
           </Description>
-          <CustomerCards>
-            <CustomerCard path={`${url}/goscinnosc`}>
-              <Picture src={goscinnosc} />
-              <Description
-                descriptionClass='description--small-light'
-                text={`For more than 70 years, UniMac has been focused on providing
-                    equipment and technology solutions specifically for the
-                    hotel on-premises laundry industry, and we work closely with
-                    our customers to identify and address their key concerns
-                    while preserving costs and increasing throughput.`}>
-                <Title level='lvl-3' text='Gościnność' />
-              </Description>
-            </CustomerCard>
-            <CustomerCard path={`${url}/opieka-dlugoterminowa`}>
-              <Picture src={opiekazdrowotna} />
-              <Description
-                descriptionClass='description--small-light'
-                text={`For more than 70 years, UniMac has been focused on providing
-                    equipment and technology solutions specifically for the
-                    hotel on-premises laundry industry, and we work closely with
-                    our customers to identify and address their key concerns
-                    while preserving costs and increasing throughput.`}>
-                <Title level='lvl-3' text='Opieka długoterminowa' />
-              </Description>
-            </CustomerCard>
-            <CustomerCard path={`${url}/pralnie-komercyjne`}>
-              <Picture src={pralniekomercyjne} />
-              <Description
-                descriptionClass='description--small-light'
-                text={`For more than 70 years, UniMac has been focused on providing
-                    equipment and technology solutions specifically for the
-                    hotel on-premises laundry industry, and we work closely with
-                    our customers to identify and address their key concerns
-                    while preserving costs and increasing throughput.`}>
-                <Title level='lvl-3' text='Pralnie komercyjne' />
-              </Description>
-            </CustomerCard>
-            <CustomerCard path={`${url}/straz-pozarna`}>
-              <Picture src={defaultImg} />
-              <Description
-                descriptionClass='description--small-light'
-                text={`For more than 70 years, UniMac has been focused on providing
-                    equipment and technology solutions specifically for the
-                    hotel on-premises laundry industry, and we work closely with
-                    our customers to identify and address their key concerns
-                    while preserving costs and increasing throughput.`}>
-                <Title level='lvl-3' text='Straż pożarna' />
-              </Description>
-            </CustomerCard>
-            <CustomerCard path={`${url}/kluby-sportowe`}>
-              <Picture src={defaultImg} />
-              <Description
-                descriptionClass='description--small-light'
-                text={`For more than 70 years, UniMac has been focused on providing
-                    equipment and technology solutions specifically for the
-                    hotel on-premises laundry industry, and we work closely with
-                    our customers to identify and address their key concerns
-                    while preserving costs and increasing throughput.`}>
-                <Title level='lvl-3' text='Kluby sportowe' />
-              </Description>
-            </CustomerCard>
-            <CustomerCard path={`${url}/pralnie-chemiczne`}>
-              <Picture src={defaultImg} />
-              <Description
-                descriptionClass='description--small-light'
-                text={`For more than 70 years, UniMac has been focused on providing
-                    equipment and technology solutions specifically for the
-                    hotel on-premises laundry industry, and we work closely with
-                    our customers to identify and address their key concerns
-                    while preserving costs and increasing throughput.`}>
-                <Title level='lvl-3' text='Pralnie chemiczne' />
-              </Description>
-            </CustomerCard>
-          </CustomerCards>
+
+          {/** customers card start */}
+          {isLoading ? (
+            <div>Loading...</div>
+          ) : (
+            <CustomerCards>
+              {customers.allCustomers
+                .map(customer => {
+                  return (
+                    <CustomerCard
+                      path={`${url}/${customer.slug}`}
+                      key={customer.id}>
+                      <Picture
+                        src={customer.images[0].url}
+                        title={customer.images[0].title}
+                        alt={customer.images[0].alt}
+                      />
+                      <Description
+                        descriptionClass='description--small-light'
+                        text={limitedString(customer.extract, 25)}>
+                        <Title level='lvl-3' text={customer.title} />
+                      </Description>
+                    </CustomerCard>
+                  );
+                })
+                .slice(0, 6)}
+            </CustomerCards>
+          )}
+          {/** customers card end */}
         </Main>
         <AsideNavigation>
           <TitleNavigation path={`${url}`} label='Nasi Klienci' />
@@ -168,42 +182,24 @@ function CustomersPage({ match }) {
 
       <CustomerLinks>
         <CustomerCards>
-          <CustomerCard path={`${url}/restuaracje`}>
-            <Picture src={restauracje} />
-            <Description>
-              <Title level='lvl-3' text='Resturacje' />
-            </Description>
-          </CustomerCard>
-          <CustomerCard path={`${url}/wellness-spa`}>
-            <Picture src={defaultImg} />
-            <Description>
-              <Title level='lvl-3' text='Wellness & SPA' />
-            </Description>
-          </CustomerCard>
-          <CustomerCard path={`${url}/armia`}>
-            <Picture src={defaultImg} />
-            <Description>
-              <Title level='lvl-3' text='Armia' />
-            </Description>
-          </CustomerCard>
-          <CustomerCard path={`${url}/marynarka-wojenna`}>
-            <Picture src={defaultImg} />
-            <Description>
-              <Title level='lvl-3' text='Marynarka wojenna' />
-            </Description>
-          </CustomerCard>
-          <CustomerCard path={`${url}/obiekty-mieszkalne`}>
-            <Picture src={defaultImg} />
-            <Description>
-              <Title level='lvl-3' text='Obiekty mieszkalne' />
-            </Description>
-          </CustomerCard>
-          <CustomerCard path={`${url}/zaklady-pracy`}>
-            <Picture src={defaultImg} />
-            <Description>
-              <Title level='lvl-3' text='Zakłady pracy' />
-            </Description>
-          </CustomerCard>
+          {customers.allCustomers
+            .map(customer => {
+              return (
+                <CustomerCard
+                  path={`${url}/${customer.slug}`}
+                  key={customer.id}>
+                  <Picture
+                    src={customer.images[0].url}
+                    title={customer.images[0].title}
+                    alt={customer.images[0].alt}
+                  />
+                  <Description>
+                    <Title level='lvl-3' text={customer.title} />
+                  </Description>
+                </CustomerCard>
+              );
+            })
+            .slice(6, 14)}
         </CustomerCards>
       </CustomerLinks>
     </Layout>
