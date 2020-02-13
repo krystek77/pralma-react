@@ -10,7 +10,8 @@
   "globals": {
     "document": true,
     "window": true,
-    "navigator": true
+    "navigator": true,
+    "fetch": true
   },
   "rules": {
     "react/jsx-filename-extension": 0,
