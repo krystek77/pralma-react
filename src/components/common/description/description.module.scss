@@ -9,12 +9,14 @@
     line-height: $line-height;
   }
   &--default {
-    font-size: $font-size * 1.2;
+    font-size: $font-size;
     padding-bottom: $padding * 2;
+    line-height: $line-height * 1.15;
   }
   &--small-light {
     font-size: $font-size * 0.875;
     color: $color-light;
+    padding-bottom: $padding;
   }
   &--news-card {
     font-size: $font-size * 0.875;
