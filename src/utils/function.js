@@ -57,5 +57,17 @@ function getCookieValue(name) {
   }
   return '';
 }
-
-export { setCookie, getCookieValue };
+/**
+ * Limit string to given numbers of words
+ * @param {string} str
+ * @param {number} numberWords
+ * @return {string}
+ */
+function limitedString(str = '', numberWords = 0) {
+  return str
+    .split(' ')
+    .slice(0, numberWords)
+    .concat(' [...]')
+    .join(' ');
+}
+export { setCookie, getCookieValue, limitedString };
