@@ -66,12 +66,12 @@ function CustomersPage({ match }) {
         if (!didUnmount) {
           // console.log('setCustomers');
           setCustomers(result.data);
+          setIsLoading(false);
         }
       } catch (error) {
         setIsError(true);
         // console.error(error);
       }
-      setIsLoading(false);
     };
     getAllCustomers();
 
