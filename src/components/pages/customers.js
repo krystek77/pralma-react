@@ -18,6 +18,7 @@ import Picture from '../common/picture';
 import CustomerLinks from '../customers/customerLinks';
 
 import { limitedString } from '../../utils';
+import Loader from '../common/loader';
 
 function CustomersPage({ match }) {
   // console.log('Into customer page');
@@ -96,22 +97,60 @@ function CustomersPage({ match }) {
           high-yield e-tailers for real-time niche.'
       />
       {isError && <div>Something went wrong</div>}
-      <PageContent>
-        <Main>
-          <Description
-            text={`At UniMac®, we don’t believe in cookie-cutter on-premises laundry
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <PageContent>
+            <Main>
+              <Description
+                text={`At UniMac®, we don’t believe in cookie-cutter on-premises laundry
       solutions. We understand that every industry has a unique set of
       challenges and demands. That’s why we offer a full line of
       industrial-quality commercial laundry equipment to suit the needs of
       businesses of all types and sizes. So no matter what your laundry
       operation requires, you can be sure that UniMac has a solution.`}>
-            <Title level='lvl-2' text='Poważnie o Twojej pralni' />
-          </Description>
-
-          {/** customers card start */}
-          {isLoading ? (
-            <div>Loading...</div>
-          ) : (
+                <Title level='lvl-2' text='Poważnie o Twojej pralni' />
+              </Description>
+              <CustomerCards>
+                {customers.allCustomers
+                  .map(customer => {
+                    return (
+                      <CustomerCard
+                        path={`${url}/${customer.slug}`}
+                        key={customer.id}>
+                        <Picture
+                          src={customer.images[0].url}
+                          title={customer.images[0].title}
+                          alt={customer.images[0].alt}
+                        />
+                        <Description
+                          descriptionClass='description--small-light'
+                          text={limitedString(customer.extract, 25)}>
+                          <Title level='lvl-3' text={customer.title} />
+                        </Description>
+                      </CustomerCard>
+                    );
+                  })
+                  .slice(0, 6)}
+              </CustomerCards>
+            </Main>
+            <AsideNavigation>
+              <TitleNavigation path={`${url}`} label='Nasi Klienci' />
+              <LinksList>
+                {customers.allCustomers.map(customer => {
+                  return (
+                    <LinkList
+                      key={customer.id}
+                      path={`${url}/${customer.slug}`}
+                      label={customer.title}
+                    />
+                  );
+                })}
+              </LinksList>
+            </AsideNavigation>
+          </PageContent>
+          <CustomerLinks>
             <CustomerCards>
               {customers.allCustomers
                 .map(customer => {
@@ -124,65 +163,17 @@ function CustomersPage({ match }) {
                         title={customer.images[0].title}
                         alt={customer.images[0].alt}
                       />
-                      <Description
-                        descriptionClass='description--small-light'
-                        text={limitedString(customer.extract, 25)}>
+                      <Description>
                         <Title level='lvl-3' text={customer.title} />
                       </Description>
                     </CustomerCard>
                   );
                 })
-                .slice(0, 6)}
+                .slice(6, 14)}
             </CustomerCards>
-          )}
-          {/** customers card end */}
-        </Main>
-
-        <AsideNavigation>
-          <TitleNavigation path={`${url}`} label='Nasi Klienci' />
-
-          {/** side navigation start */}
-          <LinksList>
-            {isLoading ? (
-              <div>Loading...</div>
-            ) : (
-              customers.allCustomers.map(customer => {
-                return (
-                  <LinkList
-                    key={customer.id}
-                    path={`${url}/${customer.slug}`}
-                    label={customer.title}
-                  />
-                );
-              })
-            )}
-          </LinksList>
-          {/** side navigation end */}
-        </AsideNavigation>
-      </PageContent>
-
-      <CustomerLinks>
-        <CustomerCards>
-          {customers.allCustomers
-            .map(customer => {
-              return (
-                <CustomerCard
-                  path={`${url}/${customer.slug}`}
-                  key={customer.id}>
-                  <Picture
-                    src={customer.images[0].url}
-                    title={customer.images[0].title}
-                    alt={customer.images[0].alt}
-                  />
-                  <Description>
-                    <Title level='lvl-3' text={customer.title} />
-                  </Description>
-                </CustomerCard>
-              );
-            })
-            .slice(6, 14)}
-        </CustomerCards>
-      </CustomerLinks>
+          </CustomerLinks>
+        </>
+      )}
     </Layout>
   );
 }
