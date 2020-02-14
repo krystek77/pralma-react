@@ -9,23 +9,24 @@ import TitleNavigation from '../common/titleNavigation';
 import LinksList from '../common/linksList';
 import LinkList from '../common/linksList/linkList';
 import Loader from '../common/loader';
-import Title from '../common/title';
 import Picture from '../common/picture';
+import BreadCrump from '../common/breadcrump';
 
 function SingleCustomer({
   match: {
     params: { slug },
+    url,
   },
 }) {
   const [customer, setCustomer] = useState({
     customer: { images: [{}] },
   });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-
+  // console.log(url);
   useEffect(() => {
+    let didUmounted = false;
     const getCustomer = async () => {
-      setIsLoading(true);
       try {
         const response = await fetch(process.env.REACT_APP_API_BASE_URL, {
           method: 'POST',
@@ -41,7 +42,6 @@ function SingleCustomer({
                   id
                   description
                   title
-                  extract
                   slug
                   images {
                     url
@@ -54,8 +54,10 @@ function SingleCustomer({
           }),
         });
         const result = await response.json();
-        setCustomer(result.data);
-        setIsLoading(false);
+        if (!didUmounted) {
+          setCustomer(result.data);
+          setIsLoading(false);
+        }
       } catch (error) {
         setIsError(true);
       }
@@ -63,12 +65,13 @@ function SingleCustomer({
     getCustomer();
 
     return () => {
+      didUmounted = true;
       // console.log('SingleCustomer unmounted', slug);
     };
   }, [slug]);
   // console.log(customer);
-  console.log(isError);
-  console.log(isLoading);
+  // console.log(isLoading);
+  // console.log(isError);
   return (
     <Layout>
       <Hero
@@ -85,63 +88,68 @@ function SingleCustomer({
       {isLoading ? (
         <Loader />
       ) : (
-        <PageContent>
-          <Main>
-            <Title text={customer.customer.title} level="lvl-2" />
-            <Picture
-              src={customer.customer.images[0].url}
-              alt={customer.customer.images[0].alt}
-              title={customer.customer.images[0].title}
-              width={500}
-            />
-            {customer.customer.description}
-          </Main>
+        <>
+          <BreadCrump title={customer.customer.title} url={url} />
+          <PageContent>
+            <Main>
+              <Picture
+                src={customer.customer.images[0].url}
+                alt={customer.customer.images[0].alt}
+                title={customer.customer.images[0].title}
+                width={500}
+              />
+              {customer.customer.description}
+            </Main>
 
-          <AsideNavigation>
-            <TitleNavigation path='/klienci' label='Nasi Klienci' />
-            <LinksList>
-              <LinkList path='/klienci/goscinnosc' label='Gościnność' />
-              <LinkList
-                path='/klienci/opieka-dlugoterminowa'
-                label='Opieka długoterminowa'
-              />
-              <LinkList
-                path='/klienci/pralnie-komercyjne'
-                label='Pralnie komercyjne'
-              />
-              <LinkList path='/klienci/straz-pozarna' label='Straż pożarna' />
-              <LinkList path='/klienci/kluby-sportowe' label='Kluby sportowe' />
-              <LinkList
-                path='/klienci/pralnie-chemiczne'
-                label='Pralnie chemiczne'
-              />
-              <LinkList path='/klienci/restauracje' label='Restauracje' />
-              <LinkList
-                path='/klienci/wellness-and-spa'
-                label='Wellness & SPA'
-              />
-              <LinkList path='/klienci/armia' label='Armia' />
-              <LinkList
-                path='/klienci/marynarka-wojenna'
-                label='Marynarka Wojenna'
-              />
-              <LinkList
-                path='/klienci/obiekty-mieszkalne'
-                label='Obiekty mieszkalne'
-              />
-              <LinkList path='/klienci/zaklady-pracy' label='Zakłady pracy' />
-              <LinkList
-                path='/klienci/pralnie-samoobslugowe'
-                label='Pralnie samoobsługowe'
-              />
-              <LinkList path='/klienci/szpitale' label='Szpitale' />
-              <LinkList
-                path='/klienci/opieka-nad-dziecmi'
-                label='Opieka nad dziećmi'
-              />
-            </LinksList>
-          </AsideNavigation>
-        </PageContent>
+            <AsideNavigation>
+              <TitleNavigation path='/klienci' label='Nasi Klienci' />
+              <LinksList>
+                <LinkList path='/klienci/goscinnosc' label='Gościnność' />
+                <LinkList
+                  path='/klienci/opieka-dlugoterminowa'
+                  label='Opieka długoterminowa'
+                />
+                <LinkList
+                  path='/klienci/pralnie-komercyjne'
+                  label='Pralnie komercyjne'
+                />
+                <LinkList path='/klienci/straz-pozarna' label='Straż pożarna' />
+                <LinkList
+                  path='/klienci/kluby-sportowe'
+                  label='Kluby sportowe'
+                />
+                <LinkList
+                  path='/klienci/pralnie-chemiczne'
+                  label='Pralnie chemiczne'
+                />
+                <LinkList path='/klienci/restauracje' label='Restauracje' />
+                <LinkList
+                  path='/klienci/wellness-and-spa'
+                  label='Wellness & SPA'
+                />
+                <LinkList path='/klienci/armia' label='Armia' />
+                <LinkList
+                  path='/klienci/marynarka-wojenna'
+                  label='Marynarka Wojenna'
+                />
+                <LinkList
+                  path='/klienci/obiekty-mieszkalne'
+                  label='Obiekty mieszkalne'
+                />
+                <LinkList path='/klienci/zaklady-pracy' label='Zakłady pracy' />
+                <LinkList
+                  path='/klienci/pralnie-samoobslugowe'
+                  label='Pralnie samoobsługowe'
+                />
+                <LinkList path='/klienci/szpitale' label='Szpitale' />
+                <LinkList
+                  path='/klienci/opieka-nad-dziecmi'
+                  label='Opieka nad dziećmi'
+                />
+              </LinksList>
+            </AsideNavigation>
+          </PageContent>
+        </>
       )}
     </Layout>
   );
@@ -149,7 +157,10 @@ function SingleCustomer({
 
 SingleCustomer.propTypes = {
   match: PropTypes.shape({
-    params: PropTypes.object,
+    params: PropTypes.shape({
+      slug: PropTypes.string,
+    }).isRequired,
+    url: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default SingleCustomer;
