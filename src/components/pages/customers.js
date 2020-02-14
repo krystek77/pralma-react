@@ -48,7 +48,6 @@ function CustomersPage({ match }) {
                       allCustomers(orderBy:id_ASC) {
                         id
                         description
-                        extract
                         title
                         slug
                         images {
@@ -126,7 +125,7 @@ function CustomersPage({ match }) {
                         />
                         <Description
                           descriptionClass='description--small-light'
-                          text={limitedString(customer.extract, 25)}>
+                          text={limitedString(customer.description, 25)}>
                           <Title level='lvl-3' text={customer.title} />
                         </Description>
                       </CustomerCard>
