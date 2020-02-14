@@ -25,6 +25,6 @@ yarn-error.log*
 # settings
 .vscode
 # assets
-src/assets/images
+
 # api keys
 .env
