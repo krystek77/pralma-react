@@ -1,0 +1,49 @@
+@import '../../../assets/scss/init.scss';
+.breadcrump {
+  background-color: $black;
+  padding: $padding * 3 $padding;
+  &__title {
+    color: $color-light;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: $font-size * 2.25;
+    font-weight: 900;
+    padding-bottom: $padding * 0.333;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__links {
+    color: $color-light;
+    text-align: center;
+  }
+  &__link {
+    color: $color-light;
+    display: inline-block;
+    padding-right: $padding * 0.666;
+    padding-left: $padding * 0.666;
+    transition: color 0.3s ease-out;
+    position: relative;
+    &:hover {
+      color: lighten($color: $color-light, $amount: 10%);
+    }
+    &::after {
+      display: block;
+      content: '\00BB';
+      font-weight: 300;
+      position: absolute;
+      top: 0;
+      left: -$font-size * 0.333;
+      transform: translateX(50%);
+      color: lighten($color: $black, $amount: 20%);
+    }
+    &:first-child::after {
+      display: none;
+    }
+  }
+  &__link--active {
+    color: $color-secondary;
+    font-weight: 500;
+    &:hover {
+      color: lighten($color: $color-secondary, $amount: 10%);
+    }
+  }
+}
